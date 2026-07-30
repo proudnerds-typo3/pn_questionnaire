@@ -1,0 +1,130 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+<f:section name="content">
+    <div class="pn-questionnaire__step" data-active-step="{progress.current}">
+
+        <f:comment><!-- Progress indicator --></f:comment>
+        <div class="pn-questionnaire__progress"
+             role="status"
+             aria-label="{f:translate(key: 'progress.step', extensionName: 'PnQuestionnaire')} {progress.current} {f:translate(key: 'progress.of', extensionName: 'PnQuestionnaire')} {progress.total}">
+            <f:comment><!-- The id lets the progressbar borrow this text as its accessible name, so there is no second copy of it to keep in sync --></f:comment>
+            <span class="pn-questionnaire__progress-text" id="progress-text-{question.uid}">
+                <f:translate key="progress.step" extensionName="PnQuestionnaire" />
+                {progress.current}
+                <f:translate key="progress.of" extensionName="PnQuestionnaire" />
+                {progress.total}
+            </span>
+            <div class="pn-questionnaire__progress-bar"
+                 role="progressbar"
+                 aria-labelledby="progress-text-{question.uid}"
+                 aria-valuenow="{progress.current}"
+                 aria-valuemin="1"
+                 aria-valuemax="{progress.total}">
+                <div class="pn-questionnaire__progress-fill"
+                     style="width: {progressPercentage}%"></div>
+            </div>
+            <p class="pn-questionnaire__progress-note">
+                <f:translate key="progress.note" extensionName="PnQuestionnaire" />
+            </p>
+        </div>
+
+        <f:comment><!-- Flash messages (server-side validation errors) --></f:comment>
+        <f:flashMessages />
+
+        <f:comment><!-- Optional context content element --></f:comment>
+        <f:if condition="{question.ttContentUid}">
+            <div class="pn-questionnaire__context-content">
+                <f:cObject
+                    typoscriptObjectPath="lib.tx_pnquestionnaire.renderContentElement"
+                    data="{ttContentUid: question.ttContentUid}"
+                />
+            </div>
+        </f:if>
+
+        <f:comment><!-- Question text --></f:comment>
+        <div class="pn-questionnaire__question-text" id="question-{question.uid}">
+            {question.questionText -> f:format.html()}
+            <f:if condition="{question.required}">
+                <f:if condition="{question.type} != 'informational'">
+                    <span class="pn-questionnaire__required-mark" aria-hidden="true">*</span>
+                </f:if>
+            </f:if>
+        </div>
+
+        <f:comment><!-- Help text --></f:comment>
+        <f:if condition="{question.helpText}">
+            <p class="pn-questionnaire__help-text" id="help-{question.uid}">
+                {question.helpText}
+            </p>
+        </f:if>
+
+        <f:comment><!-- Answer form --></f:comment>
+
+        <f:form
+            action="process"
+            method="post"
+            class="pn-questionnaire__form"
+            data="{required-error: '{f:translate(key: \'error.required\', extensionName: \'PnQuestionnaire\')}'}"
+            aria-labelledby="question-{question.uid}{f:if(condition: question.helpText, then: ' help-{question.uid}')}"
+        >
+            <f:form.hidden name="questionUid" value="{question.uid}" />
+
+            <f:comment><!-- Client-side validation error (populated by JS). The id ties it to the fieldset through aria-describedby, so a screen reader reaches the message from the answers instead of only hearing it announced once --></f:comment>
+            <p class="pn-questionnaire__error" id="error-{question.uid}" hidden="hidden" aria-live="assertive"></p>
+
+            <f:comment><!-- Answer inputs --></f:comment>
+            <fieldset class="pn-questionnaire__answers"
+                      aria-labelledby="question-{question.uid}"
+                      aria-describedby="error-{question.uid}">
+
+                <f:render
+                    partial="{answerTypePartial}"
+                    arguments="{question: question, currentAnswer: currentAnswer, scaleRange: scaleRange, scaleDisplay: scaleDisplay, scaleMiddle: scaleMiddle}"
+                />
+
+                <f:if condition="{question.required}">
+                    <f:if condition="{question.type} != 'informational'">
+                        <span class="pn-questionnaire__required-flag" data-required="1" aria-hidden="true"></span>
+                    </f:if>
+                </f:if>
+            </fieldset>
+
+            <!-- Navigation -->
+            <div class="pn-questionnaire__nav">
+                <f:if condition="{prevQuestionUid}">
+                    <f:link.action
+                        action="question"
+                        arguments="{questionUid: prevQuestionUid}"
+                        class="pn-questionnaire__btn pn-questionnaire__btn--secondary"
+                    >
+                        <f:translate key="button.previous" extensionName="PnQuestionnaire" />
+                    </f:link.action>
+                </f:if>
+
+                <f:variable
+                    name="submitLabelKey"
+                    value="{f:if(condition: isLastQuestion, then: 'button.finish', else: 'button.next')}"
+                />
+                <f:form.submit
+                    value="{f:translate(key: submitLabelKey, extensionName: 'PnQuestionnaire')}"
+                    class="pn-questionnaire__btn pn-questionnaire__btn--primary"
+                    additionalAttributes="{data-questionnaire-submit: '1'}"
+                />
+
+                <f:if condition="{hasAnswers}">
+                    <f:link.action
+                        action="reset"
+                        class="pn-questionnaire__btn pn-questionnaire__btn--reset"
+                    >
+                        <f:translate key="button.reset" extensionName="PnQuestionnaire" />
+                    </f:link.action>
+                </f:if>
+            </div>
+        </f:form>
+
+    </div>
+</f:section>
+</html>
+

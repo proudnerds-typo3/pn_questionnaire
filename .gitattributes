@@ -1,0 +1,7 @@
+# Keep the distribution archive limited to what a site actually needs to run.
+/.gitattributes export-ignore
+/.gitignore export-ignore
+/.github/ export-ignore
+/Tests/ export-ignore
+/phpunit.xml export-ignore
+/download-icons.sh export-ignore

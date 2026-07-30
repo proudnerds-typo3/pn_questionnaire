@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext"
+		  original="EXT:pn_questionnaire/Resources/Private/Language/locallang_db.xlf"
+		  date="2026-03-24T00:00:00Z"
+		  product-name="pn_questionnaire">
+		<header/>
+		<body>
+			<!-- Generic labels -->
+			<trans-unit id="labels.pleaseSelect" resname="labels.pleaseSelect">
+				<source>Please select</source>
+			</trans-unit>
+
+			<!-- Table titles -->
+			<trans-unit id="tx_pnquestionnaire_questionnaire" resname="tx_pnquestionnaire_questionnaire">
+				<source>Questionnaire</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_question" resname="tx_pnquestionnaire_question">
+				<source>Question</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_answer_option" resname="tx_pnquestionnaire_answer_option">
+				<source>Answer Option</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_condition" resname="tx_pnquestionnaire_condition">
+				<source>Condition</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_result_page" resname="tx_pnquestionnaire_result_page">
+				<source>Result Page</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_advice_block" resname="tx_pnquestionnaire_advice_block">
+				<source>Advice Block</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_saved_result" resname="tx_pnquestionnaire_saved_result">
+				<source>Saved Result</source>
+			</trans-unit>
+
+			<!-- Tab labels -->
+			<trans-unit id="tabs.questions" resname="tabs.questions">
+				<source>Questions</source>
+			</trans-unit>
+			<trans-unit id="tabs.result_pages" resname="tabs.result_pages">
+				<source>Result Pages</source>
+			</trans-unit>
+			<trans-unit id="tabs.trigger" resname="tabs.trigger">
+				<source>Trigger</source>
+			</trans-unit>
+			<trans-unit id="tabs.outcome" resname="tabs.outcome">
+				<source>Outcome</source>
+			</trans-unit>
+			<trans-unit id="tabs.conditions" resname="tabs.conditions">
+				<source>Visibility Conditions</source>
+			</trans-unit>
+			<trans-unit id="tabs.answers" resname="tabs.answers">
+				<source>Answer Options</source>
+			</trans-unit>
+			<trans-unit id="tabs.saved_answers" resname="tabs.saved_answers">
+				<source>Given answers</source>
+			</trans-unit>
+
+			<!-- Questionnaire fields -->
+			<trans-unit id="tx_pnquestionnaire_questionnaire.title" resname="tx_pnquestionnaire_questionnaire.title">
+				<source>Title (internal)</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_questionnaire.introduction_text" resname="tx_pnquestionnaire_questionnaire.introduction_text">
+				<source>Introduction text</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_questionnaire.questions" resname="tx_pnquestionnaire_questionnaire.questions">
+				<source>Questions</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_questionnaire.result_pages" resname="tx_pnquestionnaire_questionnaire.result_pages">
+				<source>Result pages</source>
+			</trans-unit>
+			<trans-unit id="palette.usage" resname="palette.usage">
+				<source>Usage</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_questionnaire.starts" resname="tx_pnquestionnaire_questionnaire.starts">
+				<source>Times started</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_questionnaire.starts.description" resname="tx_pnquestionnaire_questionnaire.starts.description">
+				<source>Raised whenever a visitor begins the questionnaire, and only while "Count usage" is on in the plugin</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_questionnaire.completions" resname="tx_pnquestionnaire_questionnaire.completions">
+				<source>Times completed</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_questionnaire.completions.description" resname="tx_pnquestionnaire_questionnaire.completions.description">
+				<source>Raised whenever a visitor reaches the result, and only while "Count usage" is on in the plugin</source>
+			</trans-unit>
+
+			<!-- Question fields -->
+			<trans-unit id="tx_pnquestionnaire_question.question_text" resname="tx_pnquestionnaire_question.question_text">
+				<source>Question</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_question.help_text" resname="tx_pnquestionnaire_question.help_text">
+				<source>Help text</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_question.tt_content_uid" resname="tx_pnquestionnaire_question.tt_content_uid">
+				<source>Context content element</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_question.type" resname="tx_pnquestionnaire_question.type">
+				<source>Question type</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_question.type.single_choice" resname="tx_pnquestionnaire_question.type.single_choice">
+				<source>Single choice (radio buttons)</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_question.type.multiple_choice" resname="tx_pnquestionnaire_question.type.multiple_choice">
+				<source>Multiple choice (checkboxes)</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_question.type.yes_no" resname="tx_pnquestionnaire_question.type.yes_no">
+				<source>Yes / No</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_question.type.scale" resname="tx_pnquestionnaire_question.type.scale">
+				<source>Scale / Rating</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_question.type.informational" resname="tx_pnquestionnaire_question.type.informational">
+				<source>Informational (no input)</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_question.scale_min" resname="tx_pnquestionnaire_question.scale_min">
+				<source>Scale minimum</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_question.scale_max" resname="tx_pnquestionnaire_question.scale_max">
+				<source>Scale maximum</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_question.scale_display" resname="tx_pnquestionnaire_question.scale_display">
+				<source>Scale display</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_question.scale_display.radio" resname="tx_pnquestionnaire_question.scale_display.radio">
+				<source>Radio buttons</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_question.scale_display.range" resname="tx_pnquestionnaire_question.scale_display.range">
+				<source>Range slider</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_question.required" resname="tx_pnquestionnaire_question.required">
+				<source>Required</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_question.answer_options" resname="tx_pnquestionnaire_question.answer_options">
+				<source>Answer options</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_question.conditions" resname="tx_pnquestionnaire_question.conditions">
+				<source>Visibility conditions</source>
+			</trans-unit>
+
+			<!-- Answer Option fields -->
+			<trans-unit id="tx_pnquestionnaire_answer_option.label" resname="tx_pnquestionnaire_answer_option.label">
+				<source>Label</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_answer_option.value" resname="tx_pnquestionnaire_answer_option.value">
+				<source>Value (internal identifier)</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_answer_option.score" resname="tx_pnquestionnaire_answer_option.score">
+				<source>Score</source>
+			</trans-unit>
+
+			<!-- Condition fields -->
+			<trans-unit id="tx_pnquestionnaire_condition.reference_question" resname="tx_pnquestionnaire_condition.reference_question">
+				<source>If question</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_condition.reference_answer" resname="tx_pnquestionnaire_condition.reference_answer">
+				<source>Has answer</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_condition.condition_type" resname="tx_pnquestionnaire_condition.condition_type">
+				<source>Condition type</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_condition.condition_type.specific_answer" resname="tx_pnquestionnaire_condition.condition_type.specific_answer">
+				<source>Specific answer</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_condition.condition_type.scale_range" resname="tx_pnquestionnaire_condition.condition_type.scale_range">
+				<source>Scale value</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_condition.scale_operator" resname="tx_pnquestionnaire_condition.scale_operator">
+				<source>Operator</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_condition.scale_operator.gte" resname="tx_pnquestionnaire_condition.scale_operator.gte">
+				<source>>= (greater than or equal to)</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_condition.scale_operator.lte" resname="tx_pnquestionnaire_condition.scale_operator.lte">
+				<source>&lt;= (less than or equal to)</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_condition.scale_operator.gt" resname="tx_pnquestionnaire_condition.scale_operator.gt">
+				<source>> (greater than)</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_condition.scale_operator.lt" resname="tx_pnquestionnaire_condition.scale_operator.lt">
+				<source>&lt; (less than)</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_condition.scale_operator.eq" resname="tx_pnquestionnaire_condition.scale_operator.eq">
+				<source>= (equal to)</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_condition.scale_value" resname="tx_pnquestionnaire_condition.scale_value">
+				<source>Value</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_condition.operator" resname="tx_pnquestionnaire_condition.operator">
+				<source>Combine with next condition using</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_condition.operator.AND" resname="tx_pnquestionnaire_condition.operator.AND">
+				<source>AND</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_condition.operator.OR" resname="tx_pnquestionnaire_condition.operator.OR">
+				<source>OR</source>
+			</trans-unit>
+
+			<!-- Result Page fields -->
+			<trans-unit id="tx_pnquestionnaire_result_page.title" resname="tx_pnquestionnaire_result_page.title">
+				<source>Title (internal)</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_result_page.trigger_type" resname="tx_pnquestionnaire_result_page.trigger_type">
+				<source>Trigger</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_result_page.trigger_type.score_range" resname="tx_pnquestionnaire_result_page.trigger_type.score_range">
+				<source>Score range</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_result_page.trigger_type.specific_answer" resname="tx_pnquestionnaire_result_page.trigger_type.specific_answer">
+				<source>Specific answer</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_result_page.trigger_type.combination" resname="tx_pnquestionnaire_result_page.trigger_type.combination">
+				<source>Combination (score + answer)</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_result_page.trigger_type.catch_all" resname="tx_pnquestionnaire_result_page.trigger_type.catch_all">
+				<source>Catch-all (always matches)</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_result_page.trigger_type.scale_answer" resname="tx_pnquestionnaire_result_page.trigger_type.scale_answer">
+				<source>Scale answer range</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_result_page.trigger_question" resname="tx_pnquestionnaire_result_page.trigger_question">
+				<source>Scale question</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_result_page.trigger_scale_min" resname="tx_pnquestionnaire_result_page.trigger_scale_min">
+				<source>Minimum value (inclusive)</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_result_page.trigger_scale_max" resname="tx_pnquestionnaire_result_page.trigger_scale_max">
+				<source>Maximum value (inclusive)</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_result_page.score_min" resname="tx_pnquestionnaire_result_page.score_min">
+				<source>Minimum score (inclusive)</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_result_page.score_max" resname="tx_pnquestionnaire_result_page.score_max">
+				<source>Maximum score (inclusive)</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_result_page.trigger_answer" resname="tx_pnquestionnaire_result_page.trigger_answer">
+				<source>Triggered by answer</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_result_page.outcome_type" resname="tx_pnquestionnaire_result_page.outcome_type">
+				<source>Outcome type</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_result_page.outcome_type.inline" resname="tx_pnquestionnaire_result_page.outcome_type.inline">
+				<source>Inline (show content here)</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_result_page.outcome_type.internal_page" resname="tx_pnquestionnaire_result_page.outcome_type.internal_page">
+				<source>Internal page (redirect)</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_result_page.outcome_type.external_url" resname="tx_pnquestionnaire_result_page.outcome_type.external_url">
+				<source>External URL (redirect)</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_result_page.outcome_type.domain_record" resname="tx_pnquestionnaire_result_page.outcome_type.domain_record">
+				<source>Domain record (redirect to detail page)</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_result_page.headline" resname="tx_pnquestionnaire_result_page.headline">
+				<source>Headline</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_result_page.body_text" resname="tx_pnquestionnaire_result_page.body_text">
+				<source>Content</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_result_page.cta_label" resname="tx_pnquestionnaire_result_page.cta_label">
+				<source>Button label</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_result_page.cta_link" resname="tx_pnquestionnaire_result_page.cta_link">
+				<source>Button link</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_result_page.advice_blocks" resname="tx_pnquestionnaire_result_page.advice_blocks">
+				<source>Advice blocks</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_result_page.page_uid" resname="tx_pnquestionnaire_result_page.page_uid">
+				<source>Target page</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_result_page.external_url" resname="tx_pnquestionnaire_result_page.external_url">
+				<source>External URL</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_result_page.record_uid" resname="tx_pnquestionnaire_result_page.record_uid">
+				<source>Record</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_result_page.record_uid.description" resname="tx_pnquestionnaire_result_page.record_uid.description">
+				<source>Select the record to link to</source>
+			</trans-unit>
+
+			<!-- Advice Block fields -->
+			<trans-unit id="tx_pnquestionnaire_advice_block.headline" resname="tx_pnquestionnaire_advice_block.headline">
+				<source>Headline</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_advice_block.body_text" resname="tx_pnquestionnaire_advice_block.body_text">
+				<source>Content</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_advice_block.condition_type" resname="tx_pnquestionnaire_advice_block.condition_type">
+				<source>Show this block</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_advice_block.condition_type.always" resname="tx_pnquestionnaire_advice_block.condition_type.always">
+				<source>Always</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_advice_block.condition_type.score_range" resname="tx_pnquestionnaire_advice_block.condition_type.score_range">
+				<source>When score is within range</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_advice_block.condition_type.specific_answer" resname="tx_pnquestionnaire_advice_block.condition_type.specific_answer">
+				<source>When specific answer was given</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_advice_block.condition_type.scale_range" resname="tx_pnquestionnaire_advice_block.condition_type.scale_range">
+				<source>When scale answer is within range</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_advice_block.condition_type.group_header" resname="tx_pnquestionnaire_advice_block.condition_type.group_header">
+				<source>Group heading above other blocks</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_advice_block.score_min" resname="tx_pnquestionnaire_advice_block.score_min">
+				<source>Minimum score</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_advice_block.score_max" resname="tx_pnquestionnaire_advice_block.score_max">
+				<source>Maximum score</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_advice_block.trigger_answer" resname="tx_pnquestionnaire_advice_block.trigger_answer">
+				<source>When answer</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_advice_block.negate_condition" resname="tx_pnquestionnaire_advice_block.negate_condition">
+				<source>Invert: show when this answer was not given</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_advice_block.negate_condition.description" resname="tx_pnquestionnaire_advice_block.negate_condition.description">
+				<source>Shows the block to everyone who did not give the answer above. Visitors who skipped the question count as not having given it, so they see the block too.</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_advice_block.group_header" resname="tx_pnquestionnaire_advice_block.group_header">
+				<source>Part of group</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_advice_block.group_header.description" resname="tx_pnquestionnaire_advice_block.group_header.description">
+				<source>Places this block under the chosen group heading. That heading only appears when at least one block in its group is visible, and this block title then renders one heading level deeper.</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_advice_block.trigger_question" resname="tx_pnquestionnaire_advice_block.trigger_question">
+				<source>Scale question</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_advice_block.trigger_scale_min" resname="tx_pnquestionnaire_advice_block.trigger_scale_min">
+				<source>Minimum value (inclusive)</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_advice_block.trigger_scale_max" resname="tx_pnquestionnaire_advice_block.trigger_scale_max">
+				<source>Maximum value (inclusive)</source>
+			</trans-unit>
+
+			<!-- Saved Result fields -->
+			<trans-unit id="tx_pnquestionnaire_saved_result.token" resname="tx_pnquestionnaire_saved_result.token">
+				<source>Token</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_saved_result.crdate" resname="tx_pnquestionnaire_saved_result.crdate">
+				<source>Saved on</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_saved_result.expires" resname="tx_pnquestionnaire_saved_result.expires">
+				<source>Expires on</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_saved_result.expires.description" resname="tx_pnquestionnaire_saved_result.expires.description">
+				<source>After this moment the result is permanently removed by the cleanup task.</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_saved_result.questionnaire" resname="tx_pnquestionnaire_saved_result.questionnaire">
+				<source>Questionnaire</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_saved_result.score" resname="tx_pnquestionnaire_saved_result.score">
+				<source>Score</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_saved_result.result_url" resname="tx_pnquestionnaire_saved_result.result_url">
+				<source>Result link</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_saved_result.result_url.description" resname="tx_pnquestionnaire_saved_result.result_url.description">
+				<source>The link the visitor uses to retrieve this result.</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_saved_result.answers" resname="tx_pnquestionnaire_saved_result.answers">
+				<source>Given answers</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
+

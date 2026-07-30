@@ -1,0 +1,7 @@
+plugin.tx_pnquestionnaire_questionnaire {
+  view {
+    templateRootPath = EXT:pn_questionnaire/Resources/Private/Templates/
+    partialRootPath  = EXT:pn_questionnaire/Resources/Private/Partials/
+    layoutRootPath   = EXT:pn_questionnaire/Resources/Private/Layouts/
+  }
+}

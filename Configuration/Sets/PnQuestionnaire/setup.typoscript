@@ -1,0 +1,3 @@
+# The TypoScript itself lives in Configuration/TypoScript/ so that TYPO3 v12 —
+# which does not know Site Sets — can include it as a static template.
+@import 'EXT:pn_questionnaire/Configuration/TypoScript/setup.typoscript'

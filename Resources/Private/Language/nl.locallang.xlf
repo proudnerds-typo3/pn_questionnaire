@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="nl" datatype="plaintext"
+		  original="EXT:pn_questionnaire/Resources/Private/Language/locallang.xlf"
+		  date="2026-03-24T00:00:00Z"
+		  product-name="pn_questionnaire">
+		<header/>
+		<body>
+			<!-- Navigation buttons -->
+			<trans-unit id="button.start" resname="button.start">
+				<source>Start</source>
+				<target>Starten</target>
+			</trans-unit>
+			<trans-unit id="button.next" resname="button.next">
+				<source>Next</source>
+				<target>Volgende</target>
+			</trans-unit>
+			<trans-unit id="button.finish" resname="button.finish">
+				<source>Finish</source>
+				<target>Afronden</target>
+			</trans-unit>
+			<trans-unit id="button.previous" resname="button.previous">
+				<source>Previous</source>
+				<target>Vorige</target>
+			</trans-unit>
+			<trans-unit id="button.reset" resname="button.reset">
+				<source>Start over</source>
+				<target>Opnieuw beginnen</target>
+			</trans-unit>
+			<trans-unit id="button.changeAnswers" resname="button.changeAnswers">
+				<source>Change my answers</source>
+				<target>Mijn antwoorden wijzigen</target>
+			</trans-unit>
+
+			<!-- Progress indicator -->
+			<trans-unit id="progress.step" resname="progress.step">
+				<source>Step</source>
+				<target>Stap</target>
+			</trans-unit>
+			<trans-unit id="progress.of" resname="progress.of">
+				<source>of</source>
+				<target>van</target>
+			</trans-unit>
+			<trans-unit id="progress.note" resname="progress.note">
+				<source>The number of steps may change based on your answers.</source>
+				<target>Het aantal stappen kan veranderen op basis van je antwoorden.</target>
+			</trans-unit>
+
+			<!-- Validation -->
+			<trans-unit id="error.required" resname="error.required">
+				<source>This field is required.</source>
+				<target>Dit veld is verplicht.</target>
+			</trans-unit>
+
+			<!-- Result page -->
+			<trans-unit id="result.score" resname="result.score">
+				<source>Your score</source>
+				<target>Je score</target>
+			</trans-unit>
+			<trans-unit id="result.answerSummary" resname="result.answerSummary">
+				<source>Your answers</source>
+				<target>Je antwoorden</target>
+			</trans-unit>
+			<trans-unit id="result.noResult" resname="result.noResult">
+				<source>No result could be determined. Please try again or contact us for assistance.</source>
+				<target>Er kon geen resultaat worden bepaald. Probeer het opnieuw of neem contact met ons op.</target>
+			</trans-unit>
+
+			<!-- Saved result -->
+			<trans-unit id="savedResult.notFound" resname="savedResult.notFound">
+				<source>This saved result is no longer available. Fill in the questionnaire again to get a new result.</source>
+				<target>Deze bewaarde uitslag is niet meer beschikbaar. Vul de vragenlijst opnieuw in voor een nieuwe uitslag.</target>
+			</trans-unit>
+			<trans-unit id="savedResult.heading" resname="savedResult.heading">
+				<source>Keep your result</source>
+				<target>Bewaar je uitslag</target>
+			</trans-unit>
+			<trans-unit id="savedResult.intro" resname="savedResult.intro">
+				<source>Save this link to find your result again later. You can change your answers from there too.</source>
+				<target>Bewaar deze link om je uitslag later terug te vinden. Je kunt je antwoorden daar ook nog wijzigen.</target>
+			</trans-unit>
+			<trans-unit id="savedResult.expires" resname="savedResult.expires">
+				<source>This link works until %s.</source>
+				<target>Deze link werkt tot %s.</target>
+			</trans-unit>
+			<trans-unit id="savedResult.copy" resname="savedResult.copy">
+				<source>Copy link</source>
+				<target>Link kopiëren</target>
+			</trans-unit>
+			<trans-unit id="savedResult.copied" resname="savedResult.copied">
+				<source>Link copied</source>
+				<target>Link gekopieerd</target>
+			</trans-unit>
+			<trans-unit id="savedResult.copyFailed" resname="savedResult.copyFailed">
+				<source>Copying did not work. Select the link and copy it yourself.</source>
+				<target>Kopiëren lukte niet. Selecteer de link en kopieer hem zelf.</target>
+			</trans-unit>
+			<trans-unit id="savedResult.privacyLink" resname="savedResult.privacyLink">
+				<source>Read what happens with your answers</source>
+				<target>Lees wat er met je antwoorden gebeurt</target>
+			</trans-unit>
+
+			<!-- Mailing the result -->
+			<trans-unit id="mail.formHeading" resname="mail.formHeading">
+				<source>Mail your result to yourself</source>
+				<target>Mail je uitslag naar jezelf</target>
+			</trans-unit>
+			<trans-unit id="mail.recipientLabel" resname="mail.recipientLabel">
+				<source>Your email address</source>
+				<target>Je e-mailadres</target>
+			</trans-unit>
+			<trans-unit id="mail.recipientHint" resname="mail.recipientHint">
+				<source>We use this address to send this one email and do not store it.</source>
+				<target>We gebruiken dit adres om deze ene e-mail te versturen en bewaren het niet.</target>
+			</trans-unit>
+			<trans-unit id="mail.invalidAddress" resname="mail.invalidAddress">
+				<source>Enter a valid email address, for example name@example.com.</source>
+				<target>Vul een geldig e-mailadres in, bijvoorbeeld naam@voorbeeld.nl.</target>
+			</trans-unit>
+			<trans-unit id="mail.submit" resname="mail.submit">
+				<source>Send</source>
+				<target>Versturen</target>
+			</trans-unit>
+			<trans-unit id="mail.sent" resname="mail.sent">
+				<source>Your result is on its way to your inbox.</source>
+				<target>Je uitslag is onderweg naar je mailbox.</target>
+			</trans-unit>
+			<trans-unit id="mail.failed" resname="mail.failed">
+				<source>Sending did not work. Try again later, or save the link above.</source>
+				<target>Versturen is niet gelukt. Probeer het later nog eens, of bewaar de link hierboven.</target>
+			</trans-unit>
+			<trans-unit id="mail.rateLimited" resname="mail.rateLimited">
+				<source>You have sent your result several times already. Try again in an hour, or save the link above.</source>
+				<target>Je hebt je uitslag al een paar keer verstuurd. Probeer het over een uur nog eens, of bewaar de link hierboven.</target>
+			</trans-unit>
+			<trans-unit id="mail.honeypotLabel" resname="mail.honeypotLabel">
+				<source>Leave this field empty</source>
+				<target>Laat dit veld leeg</target>
+			</trans-unit>
+			<trans-unit id="mail.subject" resname="mail.subject">
+				<source>Your result of %s</source>
+				<target>Je uitslag van %s</target>
+			</trans-unit>
+			<trans-unit id="mail.intro" resname="mail.intro">
+				<source>Below is your result of %s, the questionnaire you just completed.</source>
+				<target>Hieronder staat je uitslag van %s, de vragenlijst die je net hebt ingevuld.</target>
+			</trans-unit>
+			<trans-unit id="mail.footer" resname="mail.footer">
+				<source>You received this email because you asked %s to send you your result.</source>
+				<target>Je krijgt deze e-mail omdat je %s hebt gevraagd je uitslag te mailen.</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
+

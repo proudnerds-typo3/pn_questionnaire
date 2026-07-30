@@ -1,0 +1,209 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+<f:section name="content">
+
+    <f:if condition="{resultPage}">
+        <f:then>
+            <div class="pn-questionnaire__result">
+
+                <f:comment><!-- Flash messages (outcome of mailing the result) --></f:comment>
+                <f:flashMessages />
+
+                <f:comment><!-- Headline --></f:comment>
+                <f:if condition="{resultPage.headline}">
+                    <h2 class="pn-questionnaire__result-headline">
+                        {resultPage.headline}
+                    </h2>
+                </f:if>
+
+                <f:comment><!-- Score (optional) --></f:comment>
+                <f:if condition="{showScore}">
+                    <p class="pn-questionnaire__result-score">
+                        <f:translate key="result.score" extensionName="PnQuestionnaire" />:
+                        <strong>{totalScore}</strong>
+                    </p>
+                </f:if>
+
+                <f:comment><!-- Body text --></f:comment>
+                <f:if condition="{resultPage.bodyText}">
+                    <div class="pn-questionnaire__result-body">
+                        {resultPage.bodyText -> f:format.html()}
+                    </div>
+                </f:if>
+
+                <f:comment><!-- Advice blocks (already filtered by controller) --></f:comment>
+                <f:if condition="{adviceBlocks}">
+                    <div class="pn-questionnaire__advice-blocks">
+                        <f:for each="{adviceBlocks}" as="block">
+                            <f:render partial="AdviceBlock" arguments="{block: block}" />
+                        </f:for>
+                    </div>
+                </f:if>
+
+                <f:comment><!-- Saved link — only present when the editor enabled storing results --></f:comment>
+                <f:if condition="{savedResult}">
+                    <div class="pn-questionnaire__saved-result" data-saved-result>
+                        <h3 class="pn-questionnaire__saved-result-title">
+                            <f:translate key="savedResult.heading" extensionName="PnQuestionnaire" />
+                        </h3>
+                        <p class="pn-questionnaire__saved-result-intro">
+                            <f:translate key="savedResult.intro" extensionName="PnQuestionnaire" />
+                        </p>
+                        <p class="pn-questionnaire__saved-result-link">
+                            <a href="{savedResult.resultUrl}" data-saved-result-url>{savedResult.resultUrl}</a>
+                        </p>
+                        <p class="pn-questionnaire__saved-result-expires">
+                            <f:translate key="savedResult.expires" extensionName="PnQuestionnaire"
+                                arguments="{0: '{savedResult.expires -> f:format.date(format: \'d-m-Y\')}'}" />
+                        </p>
+                        <f:comment><!-- Rendered hidden: the script only reveals it when the Clipboard API exists, so there is never a dead button --></f:comment>
+                        <button
+                            type="button"
+                            class="pn-questionnaire__btn pn-questionnaire__btn--secondary"
+                            data-saved-result-copy
+                            data-copied-label="{f:translate(key: 'savedResult.copied', extensionName: 'PnQuestionnaire')}"
+                            data-failed-label="{f:translate(key: 'savedResult.copyFailed', extensionName: 'PnQuestionnaire')}"
+                            hidden="hidden"
+                        >
+                            <f:translate key="savedResult.copy" extensionName="PnQuestionnaire" />
+                        </button>
+                        <span class="pn-questionnaire__saved-result-status" role="status" data-saved-result-status></span>
+
+                        <f:comment><!-- Link to the page explaining what happens with the data; nothing is shown when the editor left it empty --></f:comment>
+                        <f:if condition="{settings.privacy_link}">
+                            <p class="pn-questionnaire__saved-result-privacy">
+                                <f:link.typolink parameter="{settings.privacy_link}">
+                                    <f:translate key="savedResult.privacyLink" extensionName="PnQuestionnaire" />
+                                </f:link.typolink>
+                            </p>
+                        </f:if>
+
+                        <f:comment><!-- Mail form — the mail carries the link above, so it needs storing to be on as well --></f:comment>
+                        <f:if condition="{mailResultEnabled}">
+                            <div class="pn-questionnaire__mail-result">
+                                <h4 class="pn-questionnaire__mail-result-title">
+                                    <f:translate key="mail.formHeading" extensionName="PnQuestionnaire" />
+                                </h4>
+                                <f:form action="mailResult" class="pn-questionnaire__mail-form">
+                                    <f:form.validationResults for="recipient">
+                                        <f:variable name="recipientInvalid">false</f:variable>
+                                        <f:if condition="{validationResults.errors}">
+                                            <f:variable name="recipientInvalid">true</f:variable>
+                                        </f:if>
+
+                                        <label class="pn-questionnaire__mail-label" for="pn-questionnaire-mail-recipient">
+                                            <f:translate key="mail.recipientLabel" extensionName="PnQuestionnaire" />
+                                        </label>
+
+                                        <f:comment><!-- One element for hint and error alike, so aria-describedby always points at something that exists --></f:comment>
+                                        <p class="pn-questionnaire__mail-hint" id="pn-questionnaire-mail-recipient-desc">
+                                            <f:if condition="{validationResults.errors}">
+                                                <f:then>
+                                                    <strong class="pn-questionnaire__mail-error">
+                                                        <f:translate key="mail.invalidAddress" extensionName="PnQuestionnaire" />
+                                                    </strong>
+                                                </f:then>
+                                                <f:else>
+                                                    <f:translate key="mail.recipientHint" extensionName="PnQuestionnaire" />
+                                                </f:else>
+                                            </f:if>
+                                        </p>
+
+                                        <f:form.textfield
+                                            name="recipient"
+                                            id="pn-questionnaire-mail-recipient"
+                                            type="email"
+                                            autocomplete="email"
+                                            required="required"
+                                            class="pn-questionnaire__mail-input"
+                                            additionalAttributes="{aria-invalid: recipientInvalid, aria-describedby: 'pn-questionnaire-mail-recipient-desc'}"
+                                        />
+                                    </f:form.validationResults>
+
+                                    <f:comment><!-- Honeypot: hidden by CSS and kept away from assistive technology and the tab order, so only an automated submission fills it --></f:comment>
+                                    <div class="pn-questionnaire__honeypot" aria-hidden="true">
+                                        <label for="pn-questionnaire-mail-website">
+                                            <f:translate key="mail.honeypotLabel" extensionName="PnQuestionnaire" />
+                                        </label>
+                                        <f:form.textfield
+                                            name="website"
+                                            id="pn-questionnaire-mail-website"
+                                            autocomplete="off"
+                                            tabindex="-1"
+                                        />
+                                    </div>
+
+                                    <f:form.submit
+                                        value="{f:translate(key: 'mail.submit', extensionName: 'PnQuestionnaire')}"
+                                        class="pn-questionnaire__btn pn-questionnaire__btn--secondary"
+                                    />
+                                </f:form>
+                            </div>
+                        </f:if>
+                    </div>
+                </f:if>
+
+                <div class="pn-questionnaire__result-buttons">
+                    <f:comment><!-- CTA button --></f:comment>
+                    <f:if condition="{resultPage.ctaLabel}">
+                        <div class="pn-questionnaire__result-cta">
+                            <f:link.typolink parameter="{resultPage.ctaLink}" class="pn-questionnaire__btn pn-questionnaire__btn--primary">
+                                {resultPage.ctaLabel}
+                            </f:link.typolink>
+                        </div>
+                    </f:if>
+
+                    <f:comment><!-- Change answers — returns to the questions with the given answers intact, unlike reset --></f:comment>
+                    <div class="pn-questionnaire__result-change">
+                        <f:link.action action="question" class="pn-questionnaire__btn pn-questionnaire__btn--secondary">
+                            <f:translate key="button.changeAnswers" extensionName="PnQuestionnaire" />
+                        </f:link.action>
+                    </div>
+
+                    <f:comment><!-- Reset / retake --></f:comment>
+                    <div class="pn-questionnaire__result-reset">
+                        <f:link.action action="reset" class="pn-questionnaire__btn pn-questionnaire__btn--reset">
+                            <f:translate key="button.reset" extensionName="PnQuestionnaire" />
+                        </f:link.action>
+                    </div>
+                </div>
+
+                <f:comment><!-- Answer summary (optional) --></f:comment>
+                <f:if condition="{showAnswerSummary}">
+                    <div class="pn-questionnaire__answer-summary">
+                        <h3 class="pn-questionnaire__answer-summary-title">
+                            <f:translate key="result.answerSummary" extensionName="PnQuestionnaire" />
+                        </h3>
+                        <dl class="pn-questionnaire__answer-summary-list">
+                            <f:for each="{answerSummary}" as="item">
+                                <div class="pn-questionnaire__summary-item">
+                                    <dt class="pn-questionnaire__summary-question">
+                                        {item.question -> f:format.stripTags()}
+                                    </dt>
+                                    <dd class="pn-questionnaire__summary-answers">
+                                        <f:for each="{item.answers}" as="answer" iteration="iter">
+                                            {answer}<f:if condition="{iter.isLast} == false">, </f:if>
+                                        </f:for>
+                                    </dd>
+                                </div>
+                            </f:for>
+                        </dl>
+                    </div>
+                </f:if>
+
+            </div>
+        </f:then>
+        <f:else>
+            <f:comment><!-- Fallback: no result matched (missing catch-all result page) --></f:comment>
+            <div class="pn-questionnaire__result pn-questionnaire__result--error">
+                <p>
+                    <f:translate key="result.noResult" extensionName="PnQuestionnaire" />
+                </p>
+            </div>
+        </f:else>
+    </f:if>
+
+</f:section>
+
+</html>

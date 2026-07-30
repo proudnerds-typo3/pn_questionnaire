@@ -1,0 +1,56 @@
+{
+	"name": "proudnerds/pn-questionnaire",
+	"type": "typo3-cms-extension",
+	"description": "Questionnaire, test and decision tree",
+	"license": "GPL-2.0-or-later",
+	"keywords": [
+		"TYPO3 CMS",
+		"questionnaire",
+		"decision tree",
+		"self-assessment",
+		"quiz",
+		"form"
+	],
+	"homepage": "https://github.com/proudnerds-typo3/pn_questionnaire",
+	"support": {
+		"issues": "https://github.com/proudnerds-typo3/pn_questionnaire/issues",
+		"source": "https://github.com/proudnerds-typo3/pn_questionnaire"
+	},
+	"require": {
+		"php": "^8.2",
+		"typo3/cms-core": "^12.4 || ^13.4 || ^14.3",
+		"typo3/cms-extbase": "^12.4 || ^13.4 || ^14.3"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "^10.5",
+		"typo3/testing-framework": "^8.3"
+	},
+	"authors": [
+		{
+			"name": "Jacco van der Post",
+			"role": "Developer",
+			"email": "jacco.vanderpost@proudnerds.com"
+		},
+		{
+			"name": "Emile Blume",
+			"role": "Developer",
+			"email": "emile.blume@proudnerds.com"
+		}
+	],
+	"extra": {
+		"typo3/cms": {
+			"extension-key": "pn_questionnaire"
+		}
+	},
+	"autoload": {
+		"psr-4": {
+			"ProudNerds\\PnQuestionnaire\\": "Classes/"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"ProudNerds\\PnQuestionnaire\\Tests\\": "Tests/"
+		}
+	}
+}
+

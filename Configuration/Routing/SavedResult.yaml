@@ -1,0 +1,39 @@
+#
+# Pretty URL for a saved questionnaire result: /<plugin-page>/saved-result/<token>
+#
+# Route enhancers cannot be registered by an extension, so a site configuration
+# has to import this file:
+#
+#   imports:
+#     - resource: 'EXT:pn_questionnaire/Configuration/Routing/SavedResult.yaml'
+#
+# The first path segment follows the language of the site; add a locale to the
+# map below for any other language. Override the whole PnQuestionnaireSavedResult
+# key after the import to use different wording.
+#
+routeEnhancers:
+  PnQuestionnaireSavedResult:
+    type: Extbase
+    extension: PnQuestionnaire
+    plugin: Questionnaire
+    routes:
+      -
+        routePath: '/{segment}/{token}'
+        _controller: 'Questionnaire::savedResult'
+        _arguments:
+          token: token
+    # Matches the hex token generateToken() produces, so the enhancer never
+    # claims an unrelated URL on a page without the plugin.
+    requirements:
+      token: '[0-9a-f]{32}'
+    aspects:
+      segment:
+        type: LocaleModifier
+        default: 'saved-result'
+        localeMap:
+          -
+            locale: 'nl_NL.*'
+            value: 'bewaarde-uitslag'
+          -
+            locale: 'de_DE.*'
+            value: 'gespeichertes-ergebnis'

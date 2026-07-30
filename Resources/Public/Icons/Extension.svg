@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Background: rounded square in indigo -->
+  <rect width="64" height="64" rx="10" ry="10" fill="#4338CA"/>
+
+  <!-- Route icon (Tabler) scaled and centered, stroke in white -->
+  <!-- Original 24x24 scaled to 40x40, translated to center (12,12) -->
+  <g transform="translate(12, 12) scale(1.6667)" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 19a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+    <path d="M19 7a2 2 0 1 0 0 -4a2 2 0 0 0 0 4z" />
+    <path d="M11 19h5.5a3.5 3.5 0 0 0 0 -7h-8a3.5 3.5 0 0 1 0 -7h4.5" />
+  </g>
+</svg>
+

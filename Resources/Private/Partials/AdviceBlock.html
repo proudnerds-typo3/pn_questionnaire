@@ -1,0 +1,32 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:comment><!-- parseFuncTSPath is optional: the result mail passes a variant that renders links absolute, the page leaves it out --></f:comment>
+<f:variable name="rteParseFunc">{parseFuncTSPath}</f:variable>
+<f:if condition="{rteParseFunc} == ''">
+    <f:variable name="rteParseFunc">lib.parseFunc_RTE</f:variable>
+</f:if>
+
+<f:comment><!-- A block that belongs to a group heading sits one heading level deeper, so the heading above it can be the h3. Class names stay identical either way. --></f:comment>
+<div class="pn-questionnaire__advice-block pn-questionnaire__advice-block--{block.conditionType}">
+    <f:if condition="{block.headline}">
+        <f:if condition="{block.groupHeader}">
+            <f:then>
+                <h4 class="pn-questionnaire__advice-block-headline">
+                    {block.headline}
+                </h4>
+            </f:then>
+            <f:else>
+                <h3 class="pn-questionnaire__advice-block-headline">
+                    {block.headline}
+                </h3>
+            </f:else>
+        </f:if>
+    </f:if>
+    <f:if condition="{block.bodyText} && {block.conditionType} != 'group_header'">
+        <div class="pn-questionnaire__advice-block-body">
+            {block.bodyText -> f:format.html(parseFuncTSPath: rteParseFunc)}
+        </div>
+    </f:if>
+</div>
+</html>

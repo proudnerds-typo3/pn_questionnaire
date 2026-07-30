@@ -1,0 +1,30 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:pnq="http://typo3.org/ns/ProudNerds/PnQuestionnaire/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:for each="{question.answerOptions}" as="option">
+    <div class="pn-questionnaire__answer-option pn-questionnaire__answer-option--checkbox">
+        <f:if condition="{pnq:inArray(haystack: currentAnswer, needle: option.uid)}">
+            <f:then>
+                <input type="checkbox"
+                       name="tx_pnquestionnaire_questionnaire[answers][]"
+                       id="answer-{option.uid}"
+                       value="{option.uid}"
+                       checked="checked"
+                       class="pn-questionnaire__checkbox" />
+            </f:then>
+            <f:else>
+                <input type="checkbox"
+                       name="tx_pnquestionnaire_questionnaire[answers][]"
+                       id="answer-{option.uid}"
+                       value="{option.uid}"
+                       class="pn-questionnaire__checkbox" />
+            </f:else>
+        </f:if>
+        <label for="answer-{option.uid}" class="pn-questionnaire__answer-label">
+            {option.label}
+        </label>
+    </div>
+</f:for>
+</html>
+

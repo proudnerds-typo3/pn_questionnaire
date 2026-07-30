@@ -1,0 +1,32 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:pnq="http://typo3.org/ns/ProudNerds/PnQuestionnaire/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:for each="{question.answerOptions}" as="option">
+    <div class="pn-questionnaire__answer-option pn-questionnaire__answer-option--radio">
+        <f:if condition="{pnq:inArray(haystack: currentAnswer, needle: option.uid)}">
+            <f:then>
+                <input type="radio"
+                       name="tx_pnquestionnaire_questionnaire[answers][]"
+                       id="answer-{option.uid}"
+                       value="{option.uid}"
+                       checked="checked"
+                       aria-required="{f:if(condition: question.required, then: 'true', else: 'false')}"
+                       class="pn-questionnaire__radio" />
+            </f:then>
+            <f:else>
+                <input type="radio"
+                       name="tx_pnquestionnaire_questionnaire[answers][]"
+                       id="answer-{option.uid}"
+                       value="{option.uid}"
+                       aria-required="{f:if(condition: question.required, then: 'true', else: 'false')}"
+                       class="pn-questionnaire__radio" />
+            </f:else>
+        </f:if>
+        <label for="answer-{option.uid}" class="pn-questionnaire__answer-label">
+            {option.label}
+        </label>
+    </div>
+</f:for>
+</html>
+

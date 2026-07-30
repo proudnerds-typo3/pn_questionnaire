@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext"
+		  original="EXT:pn_questionnaire/Resources/Private/Language/locallang.xlf"
+		  date="2026-03-24T00:00:00Z"
+		  product-name="pn_questionnaire">
+		<header/>
+		<body>
+			<!-- Navigation buttons -->
+			<trans-unit id="button.start" resname="button.start">
+				<source>Start</source>
+				<target>Starten</target>
+			</trans-unit>
+			<trans-unit id="button.next" resname="button.next">
+				<source>Next</source>
+				<target>Weiter</target>
+			</trans-unit>
+			<trans-unit id="button.finish" resname="button.finish">
+				<source>Finish</source>
+				<target>Abschließen</target>
+			</trans-unit>
+			<trans-unit id="button.previous" resname="button.previous">
+				<source>Previous</source>
+				<target>Zurück</target>
+			</trans-unit>
+			<trans-unit id="button.reset" resname="button.reset">
+				<source>Start over</source>
+				<target>Neu starten</target>
+			</trans-unit>
+			<trans-unit id="button.changeAnswers" resname="button.changeAnswers">
+				<source>Change my answers</source>
+				<target>Meine Antworten ändern</target>
+			</trans-unit>
+
+			<!-- Progress indicator -->
+			<trans-unit id="progress.step" resname="progress.step">
+				<source>Step</source>
+				<target>Schritt</target>
+			</trans-unit>
+			<trans-unit id="progress.of" resname="progress.of">
+				<source>of</source>
+				<target>von</target>
+			</trans-unit>
+			<trans-unit id="progress.note" resname="progress.note">
+				<source>The number of steps may change based on your answers.</source>
+				<target>Die Anzahl der Schritte kann sich je nach Ihren Antworten ändern.</target>
+			</trans-unit>
+
+			<!-- Validation -->
+			<trans-unit id="error.required" resname="error.required">
+				<source>This field is required.</source>
+				<target>Dieses Feld ist erforderlich.</target>
+			</trans-unit>
+
+			<!-- Result page -->
+			<trans-unit id="result.score" resname="result.score">
+				<source>Your score</source>
+				<target>Ihre Punktzahl</target>
+			</trans-unit>
+			<trans-unit id="result.answerSummary" resname="result.answerSummary">
+				<source>Your answers</source>
+				<target>Ihre Antworten</target>
+			</trans-unit>
+			<trans-unit id="result.noResult" resname="result.noResult">
+				<source>No result could be determined. Please try again or contact us for assistance.</source>
+				<target>Es konnte kein Ergebnis ermittelt werden. Bitte versuchen Sie es erneut oder kontaktieren Sie uns für Unterstützung.</target>
+			</trans-unit>
+
+			<!-- Saved result -->
+			<trans-unit id="savedResult.notFound" resname="savedResult.notFound">
+				<source>This saved result is no longer available. Fill in the questionnaire again to get a new result.</source>
+				<target>Dieses gespeicherte Ergebnis ist nicht mehr verfügbar. Füllen Sie den Fragebogen erneut aus, um ein neues Ergebnis zu erhalten.</target>
+			</trans-unit>
+			<trans-unit id="savedResult.heading" resname="savedResult.heading">
+				<source>Keep your result</source>
+				<target>Ergebnis aufbewahren</target>
+			</trans-unit>
+			<trans-unit id="savedResult.intro" resname="savedResult.intro">
+				<source>Save this link to find your result again later. You can change your answers from there too.</source>
+				<target>Speichern Sie diesen Link, um Ihr Ergebnis später wiederzufinden. Sie können Ihre Antworten dort auch noch ändern.</target>
+			</trans-unit>
+			<trans-unit id="savedResult.expires" resname="savedResult.expires">
+				<source>This link works until %s.</source>
+				<target>Dieser Link ist bis zum %s gültig.</target>
+			</trans-unit>
+			<trans-unit id="savedResult.copy" resname="savedResult.copy">
+				<source>Copy link</source>
+				<target>Link kopieren</target>
+			</trans-unit>
+			<trans-unit id="savedResult.copied" resname="savedResult.copied">
+				<source>Link copied</source>
+				<target>Link kopiert</target>
+			</trans-unit>
+			<trans-unit id="savedResult.copyFailed" resname="savedResult.copyFailed">
+				<source>Copying did not work. Select the link and copy it yourself.</source>
+				<target>Das Kopieren hat nicht funktioniert. Markieren Sie den Link und kopieren Sie ihn selbst.</target>
+			</trans-unit>
+			<trans-unit id="savedResult.privacyLink" resname="savedResult.privacyLink">
+				<source>Read what happens with your answers</source>
+				<target>Lesen Sie, was mit Ihren Antworten geschieht</target>
+			</trans-unit>
+
+			<!-- Mailing the result -->
+			<trans-unit id="mail.formHeading" resname="mail.formHeading">
+				<source>Mail your result to yourself</source>
+				<target>Ihr Ergebnis an sich selbst senden</target>
+			</trans-unit>
+			<trans-unit id="mail.recipientLabel" resname="mail.recipientLabel">
+				<source>Your email address</source>
+				<target>Ihre E-Mail-Adresse</target>
+			</trans-unit>
+			<trans-unit id="mail.recipientHint" resname="mail.recipientHint">
+				<source>We use this address to send this one email and do not store it.</source>
+				<target>Wir verwenden diese Adresse für den Versand dieser einen E-Mail und speichern sie nicht.</target>
+			</trans-unit>
+			<trans-unit id="mail.invalidAddress" resname="mail.invalidAddress">
+				<source>Enter a valid email address, for example name@example.com.</source>
+				<target>Geben Sie eine gültige E-Mail-Adresse ein, zum Beispiel name@beispiel.de.</target>
+			</trans-unit>
+			<trans-unit id="mail.submit" resname="mail.submit">
+				<source>Send</source>
+				<target>Senden</target>
+			</trans-unit>
+			<trans-unit id="mail.sent" resname="mail.sent">
+				<source>Your result is on its way to your inbox.</source>
+				<target>Ihr Ergebnis ist auf dem Weg in Ihr Postfach.</target>
+			</trans-unit>
+			<trans-unit id="mail.failed" resname="mail.failed">
+				<source>Sending did not work. Try again later, or save the link above.</source>
+				<target>Das Senden hat nicht funktioniert. Versuchen Sie es später erneut oder speichern Sie den Link oben.</target>
+			</trans-unit>
+			<trans-unit id="mail.rateLimited" resname="mail.rateLimited">
+				<source>You have sent your result several times already. Try again in an hour, or save the link above.</source>
+				<target>Sie haben Ihr Ergebnis bereits mehrmals versendet. Versuchen Sie es in einer Stunde erneut oder speichern Sie den Link oben.</target>
+			</trans-unit>
+			<trans-unit id="mail.honeypotLabel" resname="mail.honeypotLabel">
+				<source>Leave this field empty</source>
+				<target>Lassen Sie dieses Feld leer</target>
+			</trans-unit>
+			<trans-unit id="mail.subject" resname="mail.subject">
+				<source>Your result of %s</source>
+				<target>Ihr Ergebnis von %s</target>
+			</trans-unit>
+			<trans-unit id="mail.intro" resname="mail.intro">
+				<source>Below is your result of %s, the questionnaire you just completed.</source>
+				<target>Nachfolgend finden Sie Ihr Ergebnis von %s, dem Fragebogen, den Sie gerade ausgefüllt haben.</target>
+			</trans-unit>
+			<trans-unit id="mail.footer" resname="mail.footer">
+				<source>You received this email because you asked %s to send you your result.</source>
+				<target>Sie erhalten diese E-Mail, weil Sie %s gebeten haben, Ihnen Ihr Ergebnis zu senden.</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
+

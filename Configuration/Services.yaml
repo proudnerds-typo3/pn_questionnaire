@@ -1,0 +1,28 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  ProudNerds\PnQuestionnaire\:
+    resource: '../Classes/*'
+    exclude: '../Classes/Domain/Model/*'
+
+  # Send limit for the result mail: 3 per hour, counted separately per recipient and
+  # per client address. Here and not as an editor setting, because a send limit is a
+  # security measure. The status lives in the caching framework and expires on its own,
+  # so there is no table and nothing to clean up.
+  pnQuestionnaireResultMail.rateLimiterFactory:
+    class: Symfony\Component\RateLimiter\RateLimiterFactory
+    arguments:
+      $config:
+        id: 'pn-questionnaire-result-mail'
+        policy: 'sliding_window'
+        limit: 3
+        interval: '1 hour'
+      $storage: '@TYPO3\CMS\Core\RateLimiter\Storage\CachingFrameworkStorage'
+
+  ProudNerds\PnQuestionnaire\Service\MailRateLimitService:
+    arguments:
+      $rateLimiterFactory: '@pnQuestionnaireResultMail.rateLimiterFactory'
+

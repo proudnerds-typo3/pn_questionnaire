@@ -1,0 +1,62 @@
+/**
+ * pn_questionnaire — base styles
+ *
+ * Intentionally minimal. Override everything via your site package stylesheet.
+ * Loaded via f:asset.css in Layouts/Default.html.
+ */
+
+/* ── Progress bar ─────────────────────────────────────────────────────────── */
+
+.pn-questionnaire__progress-bar {
+    position: relative;
+    height: 8px;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-block: 0.75rem;
+}
+
+.pn-questionnaire__progress-fill {
+    position: absolute;
+    inset-block: 0;
+    inset-inline-start: 0;
+    height: 100%;
+    background-color: currentColor; /* inherits the site's primary text/brand colour */
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.pn-questionnaire__progress-note,
+.pn-questionnaire__help-text {
+    font-size: 0.9rem;
+}
+
+.pn-questionnaire__question-text p:last-of-type {
+    margin-bottom: 0;
+}
+
+/* ── Buttons ──────────────────────────────────────────────────────────────── */
+
+/* A floor, not a look: WCAG 2.2 requires an interactive target of at least
+   24x24px (2.5.8), and an unstyled button lands below that. A site package that
+   styles the buttons larger is unaffected. */
+.pn-questionnaire__btn {
+    display: inline-block;
+    min-width: 24px;
+    min-height: 24px;
+}
+
+/* ── Saved result ─────────────────────────────────────────────────────────── */
+
+/* The link is shown in full, so it has to be allowed to break: without this a
+   long URL forces horizontal scrolling on a 320px viewport. */
+.pn-questionnaire__saved-result-link a {
+    overflow-wrap: anywhere;
+}
+
+/* Honeypot on the mail form. display:none rather than an off-screen position, so a
+   screen reader never reaches it and the browser does not autofill it — a visitor
+   filling this in by accident would have their mail silently discarded. */
+.pn-questionnaire__honeypot {
+    display: none;
+}

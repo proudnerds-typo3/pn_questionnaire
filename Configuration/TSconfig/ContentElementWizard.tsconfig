@@ -1,0 +1,18 @@
+# Only loaded on TYPO3 v12, see ext_localconf.php. The element goes into the core "plugins"
+# group, the same group registerPlugin() uses, so the wizard looks identical on v12 and v13+.
+mod.wizards.newContentElement.wizardItems.plugins {
+    elements {
+        pnquestionnaire_questionnaire {
+            iconIdentifier = tx-pnquestionnaire-plugin
+            title = LLL:EXT:pn_questionnaire/Resources/Private/Language/locallang_be.xlf:plugin.questionnaire.title
+            description = LLL:EXT:pn_questionnaire/Resources/Private/Language/locallang_be.xlf:plugin.questionnaire.description
+            tt_content_defValues {
+                CType = pnquestionnaire_questionnaire
+            }
+        }
+    }
+
+    # Core defaults this group to `show = *`, but a site that replaces it with an explicit list
+    # would drop the element again.
+    show := addToList(pnquestionnaire_questionnaire)
+}

@@ -1,0 +1,74 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:comment><!-- The SystemEmail layout carries the frame and the branding. A site package that overrides it in MAIL.layoutRootPaths styles this mail along with every other system mail of that site. --></f:comment>
+<f:layout name="SystemEmail" />
+
+<f:section name="Title">
+    <f:translate key="mail.subject" extensionName="PnQuestionnaire" arguments="{0: questionnaire.title}" />
+</f:section>
+
+<f:section name="Main">
+
+    <f:comment><!-- Opening text: editor-supplied per plugin instance, with a translated default --></f:comment>
+    <f:if condition="{introText}">
+        <f:then>
+            {introText -> f:format.html(parseFuncTSPath: 'lib.parseFunc_RTE_pnQuestionnaireMail')}
+        </f:then>
+        <f:else>
+            <p><f:translate key="mail.intro" extensionName="PnQuestionnaire"
+                arguments="{0: questionnaire.title}" /></p>
+        </f:else>
+    </f:if>
+
+    <f:comment><!-- The outcome itself. Starts at h2 because the layout owns the top heading and the shared advice-block partial renders h3 --></f:comment>
+    <f:if condition="{resultPage.headline}">
+        <h2>{resultPage.headline}</h2>
+    </f:if>
+
+    <f:if condition="{resultPage.bodyText}">
+        {resultPage.bodyText -> f:format.html(parseFuncTSPath: 'lib.parseFunc_RTE_pnQuestionnaireMail')}
+    </f:if>
+
+    <f:for each="{adviceBlocks}" as="block">
+        <f:render partial="AdviceBlock"
+                  arguments="{block: block, parseFuncTSPath: 'lib.parseFunc_RTE_pnQuestionnaireMail'}" />
+    </f:for>
+
+    <f:if condition="{resultPage.ctaLabel}">
+        <p>
+            <f:link.typolink parameter="{resultPage.ctaLink}" absolute="1">
+                {resultPage.ctaLabel}
+            </f:link.typolink>
+        </p>
+    </f:if>
+
+    <f:comment><!-- The saved link: the current source of this outcome and the way back in to change the answers --></f:comment>
+    <h2><f:translate key="savedResult.heading" extensionName="PnQuestionnaire" /></h2>
+    <p><f:translate key="savedResult.intro" extensionName="PnQuestionnaire" /></p>
+    <p style="word-break: break-all;">
+        <a href="{savedResult.resultUrl}">{savedResult.resultUrl}</a>
+    </p>
+    <p>
+        <f:translate key="savedResult.expires" extensionName="PnQuestionnaire"
+            arguments="{0: '{savedResult.expires -> f:format.date(format: \'d-m-Y\')}'}" />
+    </p>
+
+    <f:if condition="{privacyLink}">
+        <p>
+            <f:link.typolink parameter="{privacyLink}" absolute="1">
+                <f:translate key="savedResult.privacyLink" extensionName="PnQuestionnaire" />
+            </f:link.typolink>
+        </p>
+    </f:if>
+
+    <f:if condition="{footerText}">
+        <f:then>
+            {footerText -> f:format.html(parseFuncTSPath: 'lib.parseFunc_RTE_pnQuestionnaireMail')}
+        </f:then>
+        <f:else>
+            <p><f:translate key="mail.footer" extensionName="PnQuestionnaire"
+                arguments="{0: '{typo3.sitename}'}" /></p>
+        </f:else>
+    </f:if>
+
+</f:section>
+</html>

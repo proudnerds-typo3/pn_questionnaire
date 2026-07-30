@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext"
+		  original="EXT:pn_questionnaire/Resources/Private/Language/locallang_be.xlf"
+		  date="2026-03-24T00:00:00Z"
+		  product-name="pn_questionnaire">
+		<header/>
+		<body>
+			<trans-unit id="plugin.questionnaire.title" resname="plugin.questionnaire.title">
+				<source>Questionnaire / Decision Tree</source>
+			</trans-unit>
+			<trans-unit id="plugin.questionnaire.description" resname="plugin.questionnaire.description">
+				<source>Embed a questionnaire, test or decision tree (beslisboom)</source>
+			</trans-unit>
+			<trans-unit id="sheet.general" resname="sheet.general">
+				<source>Settings</source>
+			</trans-unit>
+			<trans-unit id="flexform.questionnaire" resname="flexform.questionnaire">
+				<source>Questionnaire</source>
+			</trans-unit>
+			<trans-unit id="flexform.questionnaire.description" resname="flexform.questionnaire.description">
+				<source>Select the questionnaire record to display</source>
+			</trans-unit>
+			<trans-unit id="flexform.show_score" resname="flexform.show_score">
+				<source>Show score on result</source>
+			</trans-unit>
+			<trans-unit id="flexform.show_score.description" resname="flexform.show_score.description">
+				<source>Show the calculated score to the visitor on an inline result page</source>
+			</trans-unit>
+			<trans-unit id="flexform.show_answer_summary" resname="flexform.show_answer_summary">
+				<source>Show answer summary on result</source>
+			</trans-unit>
+			<trans-unit id="flexform.show_answer_summary.description" resname="flexform.show_answer_summary.description">
+				<source>Show a recap of the visitor's given answers on an inline result page</source>
+			</trans-unit>
+			<trans-unit id="flexform.statistics_enabled" resname="flexform.statistics_enabled">
+				<source>Count usage</source>
+			</trans-unit>
+			<trans-unit id="flexform.statistics_enabled.description" resname="flexform.statistics_enabled.description">
+				<source>Count how often this questionnaire is started and completed. The totals are shown on the questionnaire record; nothing about an individual visitor is stored</source>
+			</trans-unit>
+			<trans-unit id="flexform.introduction_screen" resname="flexform.introduction_screen">
+				<source>Show introduction screen</source>
+			</trans-unit>
+			<trans-unit id="flexform.introduction_screen.description" resname="flexform.introduction_screen.description">
+				<source>Show a dedicated introduction screen with a Start button before the first question</source>
+			</trans-unit>
+			<!-- Sheet: storing and mailing the result -->
+			<trans-unit id="sheet.savedResult" resname="sheet.savedResult">
+				<source>Storing and mailing the result</source>
+			</trans-unit>
+			<trans-unit id="flexform.db_save_result_enabled" resname="flexform.db_save_result_enabled">
+				<source>Store the result</source>
+			</trans-unit>
+			<trans-unit id="flexform.db_save_result_enabled.description" resname="flexform.db_save_result_enabled.description">
+				<source>Store the answers of everyone who completes the questionnaire, so a visitor can find their result again through a link. No name, IP address or email address is stored.</source>
+			</trans-unit>
+			<trans-unit id="flexform.db_save_result_storage_pid" resname="flexform.db_save_result_storage_pid">
+				<source>Folder for the stored results</source>
+			</trans-unit>
+			<trans-unit id="flexform.db_save_result_storage_pid.description" resname="flexform.db_save_result_storage_pid.description">
+				<source>The folder the stored results are written to, and where the editors find them again. Required, because without it the records end up on the page itself and are hard to find.</source>
+			</trans-unit>
+			<trans-unit id="flexform.db_save_result_lifetime_days" resname="flexform.db_save_result_lifetime_days">
+				<source>Keep the result for (days)</source>
+			</trans-unit>
+			<trans-unit id="flexform.db_save_result_lifetime_days.description" resname="flexform.db_save_result_lifetime_days.description">
+				<source>Number of days a visitor can find their result again through the link. The setting of the site applies when left empty, 365 days by default.</source>
+			</trans-unit>
+			<trans-unit id="flexform.mail_result_enabled" resname="flexform.mail_result_enabled">
+				<source>Allow mailing the result</source>
+			</trans-unit>
+			<trans-unit id="flexform.mail_result_enabled.description" resname="flexform.mail_result_enabled.description">
+				<source>Show a form on the result page with which a visitor mails their result to an address they type in</source>
+			</trans-unit>
+			<trans-unit id="flexform.privacy_link" resname="flexform.privacy_link">
+				<source>Link to the privacy statement</source>
+			</trans-unit>
+			<trans-unit id="flexform.privacy_link.description" resname="flexform.privacy_link.description">
+				<source>Page explaining what happens with the stored answers. Shown with the saved link and in the mail; nothing is shown when left empty.</source>
+			</trans-unit>
+			<trans-unit id="flexform.mail_from_address" resname="flexform.mail_from_address">
+				<source>Sender address of the mail</source>
+			</trans-unit>
+			<trans-unit id="flexform.mail_from_address.description" resname="flexform.mail_from_address.description">
+				<source>The address the mail is sent from. The address configured for the installation is used when left empty.</source>
+			</trans-unit>
+			<trans-unit id="flexform.mail_from_name" resname="flexform.mail_from_name">
+				<source>Sender name of the mail</source>
+			</trans-unit>
+			<trans-unit id="flexform.mail_from_name.description" resname="flexform.mail_from_name.description">
+				<source>The name the recipient sees as the sender. The name configured for the installation is used when left empty.</source>
+			</trans-unit>
+			<trans-unit id="flexform.mail_rate_limit_disabled" resname="flexform.mail_rate_limit_disabled">
+				<source>Switch off the send limit (testing only)</source>
+			</trans-unit>
+			<trans-unit id="flexform.mail_rate_limit_disabled.description" resname="flexform.mail_rate_limit_disabled.description">
+				<source>Normally a visitor may send their result three times per hour. Switching that off makes testing easier, but leaves a public form that sends unlimited mail — switch it back off before going live.</source>
+			</trans-unit>
+			<trans-unit id="flexform.mail_intro_text" resname="flexform.mail_intro_text">
+				<source>Opening text of the mail</source>
+			</trans-unit>
+			<trans-unit id="flexform.mail_intro_text.description" resname="flexform.mail_intro_text.description">
+				<source>Shown above the result in the mail. A standard sentence is used when left empty.</source>
+			</trans-unit>
+			<trans-unit id="flexform.mail_footer_text" resname="flexform.mail_footer_text">
+				<source>Closing text of the mail</source>
+			</trans-unit>
+			<trans-unit id="flexform.mail_footer_text.description" resname="flexform.mail_footer_text.description">
+				<source>Shown at the bottom of the mail. A standard sentence is used when left empty.</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
+

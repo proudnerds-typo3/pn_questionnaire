@@ -1,0 +1,88 @@
+plugin.tx_pnquestionnaire_questionnaire {
+  view {
+    templateRootPaths {
+      0 = EXT:pn_questionnaire/Resources/Private/Templates/
+      1 = {$plugin.tx_pnquestionnaire_questionnaire.view.templateRootPath}
+    }
+    partialRootPaths {
+      0 = EXT:pn_questionnaire/Resources/Private/Partials/
+      1 = {$plugin.tx_pnquestionnaire_questionnaire.view.partialRootPath}
+    }
+    layoutRootPaths {
+      0 = EXT:pn_questionnaire/Resources/Private/Layouts/
+      1 = {$plugin.tx_pnquestionnaire_questionnaire.view.layoutRootPath}
+    }
+  }
+
+  # Value settings that fall back to TypoScript when the FlexForm field is left empty.
+  # Without this list an empty FlexForm field would overwrite the TypoScript value with an empty string.
+  ignoreFlexFormSettingsIfEmpty = db_save_result_storage_pid,db_save_result_lifetime_days,mail_from_address,mail_from_name
+
+  settings {
+    # Show calculated score on the inline result page (can be overridden per plugin instance via FlexForm)
+    show_score = 0
+    # Show answer summary on the inline result page (can be overridden per plugin instance via FlexForm)
+    show_answer_summary = 0
+    # Show introduction screen before Q1 (can be overridden per plugin instance via FlexForm)
+    introduction_screen = 1
+
+    # Page uid of the folder the saved results are written to. Empty means the plugin's own page
+    # is used, with a warning in the log; the FlexForm field is the intended place to set this.
+    db_save_result_storage_pid =
+    # Number of days a saved result stays available before the purge command removes it
+    db_save_result_lifetime_days = 365
+    # Sender of the result mail. Empty falls back to MAIL.defaultMailFromAddress / defaultMailFromName
+    # of the installation.
+    mail_from_address =
+    mail_from_name =
+
+    # Domain record outcome target
+    # Configure the single record type that may be used as a domain_record outcome.
+    # The site package must also register the table via TCA override. The shipped field is a
+    # plain uid; turning it into a record browser is part of the same override, for example:
+    #   $c = &$GLOBALS['TCA']['tx_pnquestionnaire_result_page']['columns']['record_uid']['config'];
+    #   $c['type'] = 'group';
+    #   $c['allowed'] = 'tx_news_domain_model_news';
+    #   $c['foreign_table'] = 'tx_news_domain_model_news';
+    #   $c['size'] = 1;
+    #
+    # Example for ext:news:
+    # domain_record_target {
+    #   pageUid    = 42
+    #   extension  = News
+    #   controller = News
+    #   action     = detail
+    #   argument   = news
+    #   plugin     = Pi1
+    # }
+    domain_record_target {
+    }
+  }
+}
+
+# parseFunc for rich text inside the result mail: identical to the one used on the page,
+# but with absolute links. A relative href is a dead link in a mail client, and no Fluid
+# ViewHelper can reach inside rich text — f:format.html hands the stored HTML straight to
+# parseFunc. Lists, preformatted text and table cells are processed by a nested parseFunc
+# that points at lib.parseFunc by name, so those references are repointed one by one;
+# without that, a link inside a list would still come out relative.
+lib.parseFunc_pnQuestionnaireMail < lib.parseFunc
+lib.parseFunc_pnQuestionnaireMail.tags.a.typolink.forceAbsoluteUrl = 1
+
+lib.parseFunc_RTE_pnQuestionnaireMail < lib.parseFunc_RTE
+lib.parseFunc_RTE_pnQuestionnaireMail {
+  tags.a.typolink.forceAbsoluteUrl = 1
+  externalBlocks {
+    ol.stdWrap.parseFunc =< lib.parseFunc_pnQuestionnaireMail
+    ul.stdWrap.parseFunc =< lib.parseFunc_pnQuestionnaireMail
+    pre.stdWrap.parseFunc =< lib.parseFunc_pnQuestionnaireMail
+    table.HTMLtableCells.default.stdWrap.parseFunc =< lib.parseFunc_RTE_pnQuestionnaireMail
+  }
+}
+
+# Render a tt_content record by UID — used by the Question template for optional context elements
+lib.tx_pnquestionnaire.renderContentElement = RECORDS
+lib.tx_pnquestionnaire.renderContentElement {
+  source.field = ttContentUid
+  tables = tt_content
+}

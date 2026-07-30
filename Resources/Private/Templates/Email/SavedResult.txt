@@ -1,0 +1,21 @@
+<f:comment><!-- Plain-text variant, framed by the SystemEmail layout. The rich-text fields arrive pre-flattened from ResultMailService: Fluid cannot turn markup into line breaks, and stripTags alone runs paragraphs together. Link targets inside an editor's text do not survive — the saved link below is the reliable way back to the full outcome. --></f:comment>
+<f:layout name="SystemEmail" />
+
+<f:section name="Main">
+<f:if condition="{introTextPlain}"><f:then>{introTextPlain}</f:then><f:else><f:translate key="mail.intro" extensionName="PnQuestionnaire" arguments="{0: questionnaire.title}" /></f:else></f:if>
+
+<f:if condition="{resultPage.headline}">{resultPage.headline}
+</f:if><f:if condition="{bodyTextPlain}">
+{bodyTextPlain}
+</f:if><f:for each="{blocksPlain}" as="block">
+<f:if condition="{block.headline}">{block.headline}
+</f:if><f:if condition="{block.body}">{block.body}
+</f:if></f:for>
+<f:translate key="savedResult.heading" extensionName="PnQuestionnaire" />
+<f:translate key="savedResult.intro" extensionName="PnQuestionnaire" />
+{savedResult.resultUrl}
+<f:translate key="savedResult.expires" extensionName="PnQuestionnaire" arguments="{0: '{savedResult.expires -> f:format.date(format: \'d-m-Y\')}'}" /><f:if condition="{privacyLink}">
+<f:translate key="savedResult.privacyLink" extensionName="PnQuestionnaire" />: <f:uri.typolink parameter="{privacyLink}" absolute="1" />
+</f:if>
+<f:if condition="{footerTextPlain}"><f:then>{footerTextPlain}</f:then><f:else><f:translate key="mail.footer" extensionName="PnQuestionnaire" arguments="{0: '{typo3.sitename}'}" /></f:else></f:if>
+</f:section>

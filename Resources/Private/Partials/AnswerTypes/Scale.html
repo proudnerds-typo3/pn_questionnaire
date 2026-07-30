@@ -1,0 +1,68 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:pnq="http://typo3.org/ns/ProudNerds/PnQuestionnaire/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:if condition="{scaleDisplay} == 'range'">
+    <f:then>
+        <f:comment><!-- Range slider — value shown live by ScaleRange.js --></f:comment>
+        <f:asset.script identifier="pn-questionnaire-scale-range"
+                        src="EXT:pn_questionnaire/Resources/Public/JavaScript/ScaleRange.js" />
+
+        <div class="pn-questionnaire__scale pn-questionnaire__scale--range">
+            <span class="pn-questionnaire__scale-range-label pn-questionnaire__scale-range-label--min">{question.scaleMin}</span>
+
+            <div class="pn-questionnaire__scale-range-track">
+                <input type="range"
+                       name="tx_pnquestionnaire_questionnaire[answers][]"
+                       aria-required="{f:if(condition: question.required, then: 'true', else: 'false')}"
+                       id="scale-{question.uid}"
+                       min="{question.scaleMin}"
+                       max="{question.scaleMax}"
+                       value="{f:if(condition: currentAnswer.0, then: currentAnswer.0, else: scaleMiddle)}"
+                       class="pn-questionnaire__range" />
+                <output for="scale-{question.uid}" class="pn-questionnaire__range-value">
+                    {f:if(condition: currentAnswer.0, then: currentAnswer.0, else: scaleMiddle)}
+                </output>
+            </div>
+
+            <span class="pn-questionnaire__scale-range-label pn-questionnaire__scale-range-label--max">{question.scaleMax}</span>
+        </div>
+    </f:then>
+    <f:else>
+        <f:comment><!-- Radio buttons (default) --></f:comment>
+        <div class="pn-questionnaire__scale pn-questionnaire__scale--radio"
+             role="group"
+             aria-label="{question.scaleMin} – {question.scaleMax}">
+            <div class="pn-questionnaire__scale-options">
+                <f:for each="{scaleRange}" as="value">
+                    <div class="pn-questionnaire__scale-option">
+                        <f:if condition="{pnq:inArray(haystack: currentAnswer, needle: value)}">
+                            <f:then>
+                                <input type="radio"
+                                       name="tx_pnquestionnaire_questionnaire[answers][]"
+                                       aria-required="{f:if(condition: question.required, then: 'true', else: 'false')}"
+                                       id="scale-{question.uid}-{value}"
+                                       value="{value}"
+                                       checked="checked"
+                                       class="pn-questionnaire__radio" />
+                            </f:then>
+                            <f:else>
+                                <input type="radio"
+                                       name="tx_pnquestionnaire_questionnaire[answers][]"
+                                       aria-required="{f:if(condition: question.required, then: 'true', else: 'false')}"
+                                       id="scale-{question.uid}-{value}"
+                                       value="{value}"
+                                       class="pn-questionnaire__radio" />
+                            </f:else>
+                        </f:if>
+                        <label for="scale-{question.uid}-{value}" class="pn-questionnaire__scale-label">
+                            {value}
+                        </label>
+                    </div>
+                </f:for>
+            </div>
+        </div>
+    </f:else>
+</f:if>
+
+</html>
