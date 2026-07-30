@@ -28,5 +28,5 @@ First public release.
 - TYPO3 12.4, 13.4 and 14.3 from a single codebase, each version verified with a full run-through
 - PHP 8.2 and up
 
-[Unreleased]: https://github.com/proudnerds-typo3/pn_questionnaire/compare/v1.0.0...HEAD
-[1.0.0]: https://github.com/proudnerds-typo3/pn_questionnaire/releases/tag/v1.0.0
+[Unreleased]: https://github.com/proudnerds-typo3/pn_questionnaire/compare/1.0.0...HEAD
+[1.0.0]: https://github.com/proudnerds-typo3/pn_questionnaire/releases/tag/1.0.0
