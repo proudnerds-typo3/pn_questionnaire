@@ -109,6 +109,36 @@
 			<trans-unit id="flexform.mail_footer_text.description" resname="flexform.mail_footer_text.description">
 				<source>Shown at the bottom of the mail. A standard sentence is used when left empty.</source>
 			</trans-unit>
+			<trans-unit id="sheet.labels" resname="sheet.labels">
+				<source>Button labels</source>
+			</trans-unit>
+			<trans-unit id="sheet.labels.description" resname="sheet.labels.description">
+				<source>Own texts for the navigation buttons. A field left empty uses the standard text that is shown as a placeholder.</source>
+			</trans-unit>
+			<trans-unit id="flexform.button_start" resname="flexform.button_start">
+				<source>Start button</source>
+			</trans-unit>
+			<trans-unit id="flexform.button_previous" resname="flexform.button_previous">
+				<source>Previous button</source>
+			</trans-unit>
+			<trans-unit id="flexform.button_next" resname="flexform.button_next">
+				<source>Next button</source>
+			</trans-unit>
+			<trans-unit id="flexform.button_finish" resname="flexform.button_finish">
+				<source>Finish button</source>
+			</trans-unit>
+			<trans-unit id="flexform.button_reset" resname="flexform.button_reset">
+				<source>Start over button</source>
+			</trans-unit>
+			<trans-unit id="flexform.button_change_answers" resname="flexform.button_change_answers">
+				<source>Change answers button</source>
+			</trans-unit>
+			<trans-unit id="flexform.button_copy_link" resname="flexform.button_copy_link">
+				<source>Copy link button</source>
+			</trans-unit>
+			<trans-unit id="flexform.button_mail_submit" resname="flexform.button_mail_submit">
+				<source>Send mail button</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

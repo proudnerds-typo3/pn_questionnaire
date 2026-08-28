@@ -1,11 +1,12 @@
 CREATE TABLE tx_pnquestionnaire_questionnaire
 (
-    title             varchar(255)        DEFAULT ''  NOT NULL,
-    introduction_text text,
-    questions         int(11) unsigned    DEFAULT '0' NOT NULL,
-    result_pages      int(11) unsigned    DEFAULT '0' NOT NULL,
-    starts            int(11) unsigned    DEFAULT '0' NOT NULL,
-    completions       int(11) unsigned    DEFAULT '0' NOT NULL
+    title                    varchar(255)     DEFAULT ''  NOT NULL,
+    introduction_text        text,
+    introduction_footer_text text,
+    questions                int(11) unsigned DEFAULT '0' NOT NULL,
+    result_pages             int(11) unsigned DEFAULT '0' NOT NULL,
+    starts                   int(11) unsigned DEFAULT '0' NOT NULL,
+    completions              int(11) unsigned DEFAULT '0' NOT NULL
 );
 
 CREATE TABLE tx_pnquestionnaire_question

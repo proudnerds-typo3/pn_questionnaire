@@ -18,9 +18,16 @@
                 action="question"
                 class="pn-questionnaire__btn pn-questionnaire__btn--primary"
             >
-                <f:translate key="button.start" extensionName="PnQuestionnaire" />
+                <f:render partial="ButtonLabel" arguments="{override: settings.button_start, key: 'button.start'}" />
             </f:link.action>
         </div>
+
+        <f:comment><!-- Closing remark below the start button, e.g. how long it takes or what happens with the answers --></f:comment>
+        <f:if condition="{questionnaire.introductionFooterText}">
+            <div class="pn-questionnaire__intro-footer">
+                {questionnaire.introductionFooterText -> f:format.html()}
+            </div>
+        </f:if>
 
     </div>
 </f:section>

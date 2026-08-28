@@ -35,6 +35,9 @@
 			</trans-unit>
 
 			<!-- Tab labels -->
+			<trans-unit id="tabs.introduction_screen" resname="tabs.introduction_screen">
+				<source>Introduction screen</source>
+			</trans-unit>
 			<trans-unit id="tabs.questions" resname="tabs.questions">
 				<source>Questions</source>
 			</trans-unit>
@@ -63,6 +66,12 @@
 			</trans-unit>
 			<trans-unit id="tx_pnquestionnaire_questionnaire.introduction_text" resname="tx_pnquestionnaire_questionnaire.introduction_text">
 				<source>Introduction text</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_questionnaire.introduction_footer_text" resname="tx_pnquestionnaire_questionnaire.introduction_footer_text">
+				<source>Text below the start button</source>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_questionnaire.introduction_footer_text.description" resname="tx_pnquestionnaire_questionnaire.introduction_footer_text.description">
+				<source>Closing remark on the introduction screen, for instance how long the questionnaire takes or what happens with the answers</source>
 			</trans-unit>
 			<trans-unit id="tx_pnquestionnaire_questionnaire.questions" resname="tx_pnquestionnaire_questionnaire.questions">
 				<source>Questions</source>

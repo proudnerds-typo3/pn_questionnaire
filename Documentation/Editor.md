@@ -44,7 +44,11 @@ Before building a questionnaire it helps to understand the main building blocks.
 1. Open the **List** module and navigate to the folder where questionnaire records should be stored (ask your developer to set up a dedicated sysfolder)
 2. Create a new **Questionnaire** record
 3. Fill in the **Title** — this is an internal label, never shown to the visitor
-4. Optionally add an **Introduction text** — this appears on the intro screen before the first question (if the intro screen is enabled in the plugin settings)
+4. On the **Introduction screen** tab, optionally fill in:
+   - **Introduction text** — appears before the first question, above the start button
+   - **Text below the start button** — a closing remark, for instance how long the questionnaire takes or what happens with the answers
+
+   Both are only shown when the intro screen is enabled in the plugin settings, and both may be left empty.
 5. Save the record
 
 ---
@@ -230,7 +234,7 @@ What to keep in mind:
 
 These settings live on the **plugin instance** (the content element on the page), not the questionnaire record. This means the same questionnaire can behave differently on different pages.
 
-They are split over two tabs.
+They are split over three tabs.
 
 ### Tab: Settings
 
@@ -241,6 +245,29 @@ They are split over two tabs.
 | **Show score on result** | Show the calculated score on an inline result page | Off |
 | **Show answer summary** | Show a recap of the visitor's given answers on the result page | Off |
 | **Count usage** | Keep a tally on the questionnaire record of how often it was started and completed | Off |
+
+### Tab: Button labels
+
+The navigation buttons carry a standard text that follows the language of the site. Each of them can
+be given an own text here, per plugin instance — useful when the questionnaire is a checklist rather
+than a test, or when the tone of the page asks for something else than "Next".
+
+| Setting | Standard text |
+|---|---|
+| **Start button** | Start |
+| **Previous button** | Previous |
+| **Next button** | Next |
+| **Finish button** | Finish |
+| **Start over button** | Start over |
+| **Change answers button** | Change my answers |
+| **Copy link button** | Copy link |
+| **Send mail button** | Send |
+
+The standard text of each field is shown in grey as long as the field is empty, and an empty field
+keeps that standard text. There is no need to fill in all of them.
+
+The last two only appear once their function is switched on in **Storing and mailing the result**:
+the copy button belongs to the retrieval link, the send button to the mail form.
 
 ### Tab: Storing and mailing the result
 

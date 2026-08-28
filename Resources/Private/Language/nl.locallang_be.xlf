@@ -143,6 +143,46 @@
 				<source>Shown at the bottom of the mail. A standard sentence is used when left empty.</source>
 				<target>Komt onderaan de mail te staan. Leeg laten betekent dat er een standaardzin gebruikt wordt.</target>
 			</trans-unit>
+			<trans-unit id="sheet.labels" resname="sheet.labels">
+				<source>Button labels</source>
+				<target>Knopteksten</target>
+			</trans-unit>
+			<trans-unit id="sheet.labels.description" resname="sheet.labels.description">
+				<source>Own texts for the navigation buttons. A field left empty uses the standard text that is shown as a placeholder.</source>
+				<target>Eigen teksten voor de navigatieknoppen. Een leeg veld gebruikt de standaardtekst die als voorbeeld in het veld staat.</target>
+			</trans-unit>
+			<trans-unit id="flexform.button_start" resname="flexform.button_start">
+				<source>Start button</source>
+				<target>Knop 'Starten'</target>
+			</trans-unit>
+			<trans-unit id="flexform.button_previous" resname="flexform.button_previous">
+				<source>Previous button</source>
+				<target>Knop 'Vorige'</target>
+			</trans-unit>
+			<trans-unit id="flexform.button_next" resname="flexform.button_next">
+				<source>Next button</source>
+				<target>Knop 'Volgende'</target>
+			</trans-unit>
+			<trans-unit id="flexform.button_finish" resname="flexform.button_finish">
+				<source>Finish button</source>
+				<target>Knop 'Afronden'</target>
+			</trans-unit>
+			<trans-unit id="flexform.button_reset" resname="flexform.button_reset">
+				<source>Start over button</source>
+				<target>Knop 'Opnieuw beginnen'</target>
+			</trans-unit>
+			<trans-unit id="flexform.button_change_answers" resname="flexform.button_change_answers">
+				<source>Change answers button</source>
+				<target>Knop 'Mijn antwoorden wijzigen'</target>
+			</trans-unit>
+			<trans-unit id="flexform.button_copy_link" resname="flexform.button_copy_link">
+				<source>Copy link button</source>
+				<target>Knop 'Link kopiëren'</target>
+			</trans-unit>
+			<trans-unit id="flexform.button_mail_submit" resname="flexform.button_mail_submit">
+				<source>Send mail button</source>
+				<target>Knop 'Versturen'</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

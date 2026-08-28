@@ -8,8 +8,8 @@
 | **TYPO3 compatibility** | 12.4, 13.4, 14.3 |
 | **PHP** | 8.2+ |
 | **Author** | ProudNerds |
-| **Version** | 1.0.0 |
-| **License** | [GPL-2.0-or-later](../LICENSE.txt) |
+| **Version** | 1.1.0 |
+| **License** | [GPL-2.0-or-later](https://github.com/proudnerds-typo3/pn_questionnaire/blob/main/LICENSE.txt) |
 
 ---
 
@@ -35,7 +35,7 @@
 
 ## Quick start
 
-1. Load the TypoScript: on TYPO3 v13 and v14 add the Site Set `proudnerds/pn-questionnaire` to your site configuration; on v12 include the static template *Questionnaire / Test / Decision tree*. See [Loading the TypoScript](Admin.md#2-loading-the-typoscript).
+1. Load the TypoScript: on TYPO3 v13 and v14 add the Site Set `proudnerds/pn-questionnaire` to your site configuration; on v12 include the static template *Questionnaire / Test / Decision tree*. See *Loading the TypoScript* in the [Admin Guide](Admin.md).
 2. Create a **Questionnaire** record in the TYPO3 list module (a dedicated sysfolder is recommended)
 3. Add questions, answer options and result pages to the record
 4. Place the **Questionnaire / Decision Tree** plugin on a page

@@ -4,6 +4,17 @@ All notable changes to this extension are documented in this file. The format fo
 
 ## [Unreleased]
 
+## [1.1.0] - 2026-08-28
+
+### Added
+
+- **Text below the start button** on the questionnaire record — a rich text field for a closing remark on the introduction screen, such as how long the questionnaire takes. The introduction fields moved to their own **Introduction screen** tab
+- Own button texts per plugin instance, on a new **Button labels** tab in the FlexForm. Every button the visitor sees can be given a text of its own — start, previous, next, finish, start over, change answers, copy link and send mail. A field left empty keeps the translated standard text, which is shown as the field's placeholder
+
+### Upgrading from 1.0.0
+
+- Run the **Database Analyser** in the Install Tool: the questionnaire table gains the column `introduction_footer_text`. Nothing else changes; existing records and plugin settings keep working as they are
+
 ## [1.0.0]
 
 First public release.
@@ -28,5 +39,6 @@ First public release.
 - TYPO3 12.4, 13.4 and 14.3 from a single codebase, each version verified with a full run-through
 - PHP 8.2 and up
 
-[Unreleased]: https://github.com/proudnerds-typo3/pn_questionnaire/compare/1.0.0...HEAD
+[Unreleased]: https://github.com/proudnerds-typo3/pn_questionnaire/compare/1.1.0...HEAD
+[1.1.0]: https://github.com/proudnerds-typo3/pn_questionnaire/compare/1.0.0...1.1.0
 [1.0.0]: https://github.com/proudnerds-typo3/pn_questionnaire/releases/tag/1.0.0

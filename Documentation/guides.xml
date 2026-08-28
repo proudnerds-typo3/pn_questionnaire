@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<guides xmlns="https://www.phpdoc.org/guides" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="https://www.phpdoc.org/guides ../vendor/phpdocumentor/guides-cli/resources/schema/guides.xsd"
+        links-are-relative="true"
+        default-code-language="php"
+        input-format="md"
+        index-name="Index"
+        automatic-menu="true"
+>
+    <extension class="\T3Docs\Typo3DocsTheme\DependencyInjection\Typo3DocsThemeExtension"
+               project-home="https://extensions.typo3.org/extension/pn_questionnaire/"
+               project-repository="https://github.com/proudnerds-typo3/pn_questionnaire"
+               project-issues="https://github.com/proudnerds-typo3/pn_questionnaire/issues"
+               edit-on-github="proudnerds-typo3/pn_questionnaire"
+               edit-on-github-branch="main"
+               typo3-core-preferred="stable"
+               interlink-shortcode="proudnerds/pn-questionnaire"
+    />
+    <project title="Questionnaire / Test / Decision tree" release="1.1.0" version="1.1"
+             copyright="since 2026 by Proud Nerds"/>
+</guides>

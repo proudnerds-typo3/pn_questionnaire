@@ -99,7 +99,7 @@
                         arguments="{questionUid: prevQuestionUid}"
                         class="pn-questionnaire__btn pn-questionnaire__btn--secondary"
                     >
-                        <f:translate key="button.previous" extensionName="PnQuestionnaire" />
+                        <f:render partial="ButtonLabel" arguments="{override: settings.button_previous, key: 'button.previous'}" />
                     </f:link.action>
                 </f:if>
 
@@ -107,8 +107,12 @@
                     name="submitLabelKey"
                     value="{f:if(condition: isLastQuestion, then: 'button.finish', else: 'button.next')}"
                 />
+                <f:variable
+                    name="submitLabelOverride"
+                    value="{f:if(condition: isLastQuestion, then: settings.button_finish, else: settings.button_next)}"
+                />
                 <f:form.submit
-                    value="{f:translate(key: submitLabelKey, extensionName: 'PnQuestionnaire')}"
+                    value="{f:render(partial: 'ButtonLabel', arguments: {override: submitLabelOverride, key: submitLabelKey}) -> f:format.trim()}"
                     class="pn-questionnaire__btn pn-questionnaire__btn--primary"
                     additionalAttributes="{data-questionnaire-submit: '1'}"
                 />
@@ -118,7 +122,7 @@
                         action="reset"
                         class="pn-questionnaire__btn pn-questionnaire__btn--reset"
                     >
-                        <f:translate key="button.reset" extensionName="PnQuestionnaire" />
+                        <f:render partial="ButtonLabel" arguments="{override: settings.button_reset, key: 'button.reset'}" />
                     </f:link.action>
                 </f:if>
             </div>

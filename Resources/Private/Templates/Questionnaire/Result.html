@@ -66,7 +66,7 @@
                             data-failed-label="{f:translate(key: 'savedResult.copyFailed', extensionName: 'PnQuestionnaire')}"
                             hidden="hidden"
                         >
-                            <f:translate key="savedResult.copy" extensionName="PnQuestionnaire" />
+                            <f:render partial="ButtonLabel" arguments="{override: settings.button_copy_link, key: 'savedResult.copy'}" />
                         </button>
                         <span class="pn-questionnaire__saved-result-status" role="status" data-saved-result-status></span>
 
@@ -135,7 +135,7 @@
                                     </div>
 
                                     <f:form.submit
-                                        value="{f:translate(key: 'mail.submit', extensionName: 'PnQuestionnaire')}"
+                                        value="{f:render(partial: 'ButtonLabel', arguments: {override: settings.button_mail_submit, key: 'mail.submit'}) -> f:format.trim()}"
                                         class="pn-questionnaire__btn pn-questionnaire__btn--secondary"
                                     />
                                 </f:form>
@@ -157,14 +157,14 @@
                     <f:comment><!-- Change answers — returns to the questions with the given answers intact, unlike reset --></f:comment>
                     <div class="pn-questionnaire__result-change">
                         <f:link.action action="question" class="pn-questionnaire__btn pn-questionnaire__btn--secondary">
-                            <f:translate key="button.changeAnswers" extensionName="PnQuestionnaire" />
+                            <f:render partial="ButtonLabel" arguments="{override: settings.button_change_answers, key: 'button.changeAnswers'}" />
                         </f:link.action>
                     </div>
 
                     <f:comment><!-- Reset / retake --></f:comment>
                     <div class="pn-questionnaire__result-reset">
                         <f:link.action action="reset" class="pn-questionnaire__btn pn-questionnaire__btn--reset">
-                            <f:translate key="button.reset" extensionName="PnQuestionnaire" />
+                            <f:render partial="ButtonLabel" arguments="{override: settings.button_reset, key: 'button.reset'}" />
                         </f:link.action>
                     </div>
                 </div>

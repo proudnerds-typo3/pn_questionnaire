@@ -43,6 +43,10 @@
 			</trans-unit>
 
 			<!-- Tab labels -->
+			<trans-unit id="tabs.introduction_screen" resname="tabs.introduction_screen">
+				<source>Introduction screen</source>
+				<target>Introductiescherm</target>
+			</trans-unit>
 			<trans-unit id="tabs.questions" resname="tabs.questions">
 				<source>Questions</source>
 				<target>Vragen</target>
@@ -80,6 +84,14 @@
 			<trans-unit id="tx_pnquestionnaire_questionnaire.introduction_text" resname="tx_pnquestionnaire_questionnaire.introduction_text">
 				<source>Introduction text</source>
 				<target>Introductietekst</target>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_questionnaire.introduction_footer_text" resname="tx_pnquestionnaire_questionnaire.introduction_footer_text">
+				<source>Text below the start button</source>
+				<target>Tekst onder de startknop</target>
+			</trans-unit>
+			<trans-unit id="tx_pnquestionnaire_questionnaire.introduction_footer_text.description" resname="tx_pnquestionnaire_questionnaire.introduction_footer_text.description">
+				<source>Closing remark on the introduction screen, for instance how long the questionnaire takes or what happens with the answers</source>
+				<target>Afsluitende opmerking op het introductiescherm, bijvoorbeeld hoe lang de vragenlijst duurt of wat er met de antwoorden gebeurt</target>
 			</trans-unit>
 			<trans-unit id="tx_pnquestionnaire_questionnaire.questions" resname="tx_pnquestionnaire_questionnaire.questions">
 				<source>Questions</source>

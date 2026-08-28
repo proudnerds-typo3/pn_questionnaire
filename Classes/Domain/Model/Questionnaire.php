@@ -30,6 +30,12 @@ class Questionnaire extends AbstractEntity
     protected string $introductionText = '';
 
     /**
+     * Shown on the intro screen below the start button, for a closing remark
+     * such as how long the questionnaire takes or what happens with the answers.
+     */
+    protected string $introductionFooterText = '';
+
+    /**
      * Ordered list of question records (drag-and-drop sortable).
      *
      * @var ObjectStorage<Question>
@@ -69,6 +75,16 @@ class Questionnaire extends AbstractEntity
     public function setIntroductionText(string $introductionText): void
     {
         $this->introductionText = $introductionText;
+    }
+
+    public function getIntroductionFooterText(): string
+    {
+        return $this->introductionFooterText;
+    }
+
+    public function setIntroductionFooterText(string $introductionFooterText): void
+    {
+        $this->introductionFooterText = $introductionFooterText;
     }
 
     /**

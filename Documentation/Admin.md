@@ -392,6 +392,7 @@ The extension ships a minimal CSS file (`Resources/Public/Css/Questionnaire.css`
 | `.pn-questionnaire__intro` | Intro screen container |
 | `.pn-questionnaire__intro-text` | Introduction text area |
 | `.pn-questionnaire__intro-actions` | Start button wrapper |
+| `.pn-questionnaire__intro-footer` | Text below the start button |
 | `.pn-questionnaire__step` | Question step container (has `data-active-step` attribute) |
 | `.pn-questionnaire__progress` | Progress indicator wrapper |
 | `.pn-questionnaire__progress-bar` | Grey track of the progress bar |

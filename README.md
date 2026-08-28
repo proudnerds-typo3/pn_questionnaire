@@ -24,7 +24,7 @@ Then run the **Database Analyser** in the Install Tool to create the tables, and
 
 | Document | Audience |
 |---|---|
-| [Overview](Documentation/README.md) | Start here — what the extension does and a quick start |
+| [Overview](Documentation/Index.md) | Start here — what the extension does and a quick start |
 | [Editor Guide](Documentation/Editor.md) | Content editors — building and managing questionnaires in the backend |
 | [Admin Guide](Documentation/Admin.md) | Administrators, integrators and developers — install, configure, theme and extend |
 

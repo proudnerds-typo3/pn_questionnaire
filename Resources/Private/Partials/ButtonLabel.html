@@ -1,0 +1,16 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:comment><!--
+    Renders the label of a navigation button. The editor can enter an own text per plugin instance
+    in the FlexForm; an empty field falls back to the translation.
+
+    Arguments:
+      override  the FlexForm value, e.g. {settings.button_next}
+      key       the locallang key used when no override is given, e.g. 'button.next'
+
+    Everything is kept on a single line because the output is also used as the value attribute of
+    the submit button, where surrounding whitespace would end up in the rendered label.
+--></f:comment>
+<f:if condition="{override}"><f:then>{override}</f:then><f:else><f:translate key="{key}" extensionName="PnQuestionnaire" /></f:else></f:if>
+</html>

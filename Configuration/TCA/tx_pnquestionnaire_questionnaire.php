@@ -37,8 +37,10 @@ return [
     'types' => [
         '1' => ['showitem' => '
             --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
-                title, introduction_text,
+                title,
                 --palette--;LLL:EXT:pn_questionnaire/Resources/Private/Language/locallang_db.xlf:palette.usage;usage,
+            --div--;LLL:EXT:pn_questionnaire/Resources/Private/Language/locallang_db.xlf:tabs.introduction_screen,
+                introduction_text, introduction_footer_text,
             --div--;LLL:EXT:pn_questionnaire/Resources/Private/Language/locallang_db.xlf:tabs.questions,
                 questions,
             --div--;LLL:EXT:pn_questionnaire/Resources/Private/Language/locallang_db.xlf:tabs.result_pages,
@@ -114,6 +116,15 @@ return [
                 'type' => 'text',
                 'enableRichtext' => true,
                 'rows' => 8,
+            ],
+        ],
+        'introduction_footer_text' => [
+            'label' => 'LLL:EXT:pn_questionnaire/Resources/Private/Language/locallang_db.xlf:tx_pnquestionnaire_questionnaire.introduction_footer_text',
+            'description' => 'LLL:EXT:pn_questionnaire/Resources/Private/Language/locallang_db.xlf:tx_pnquestionnaire_questionnaire.introduction_footer_text.description',
+            'config' => [
+                'type' => 'text',
+                'enableRichtext' => true,
+                'rows' => 5,
             ],
         ],
         'questions' => [

@@ -143,6 +143,46 @@
 				<source>Shown at the bottom of the mail. A standard sentence is used when left empty.</source>
 				<target>Erscheint am Ende der E-Mail. Bleibt das Feld leer, wird ein Standardsatz verwendet.</target>
 			</trans-unit>
+			<trans-unit id="sheet.labels" resname="sheet.labels">
+				<source>Button labels</source>
+				<target>Beschriftung der Schaltflächen</target>
+			</trans-unit>
+			<trans-unit id="sheet.labels.description" resname="sheet.labels.description">
+				<source>Own texts for the navigation buttons. A field left empty uses the standard text that is shown as a placeholder.</source>
+				<target>Eigene Texte für die Navigationsschaltflächen. Ein leeres Feld verwendet den Standardtext, der als Platzhalter angezeigt wird.</target>
+			</trans-unit>
+			<trans-unit id="flexform.button_start" resname="flexform.button_start">
+				<source>Start button</source>
+				<target>Schaltfläche 'Starten'</target>
+			</trans-unit>
+			<trans-unit id="flexform.button_previous" resname="flexform.button_previous">
+				<source>Previous button</source>
+				<target>Schaltfläche 'Zurück'</target>
+			</trans-unit>
+			<trans-unit id="flexform.button_next" resname="flexform.button_next">
+				<source>Next button</source>
+				<target>Schaltfläche 'Weiter'</target>
+			</trans-unit>
+			<trans-unit id="flexform.button_finish" resname="flexform.button_finish">
+				<source>Finish button</source>
+				<target>Schaltfläche 'Abschließen'</target>
+			</trans-unit>
+			<trans-unit id="flexform.button_reset" resname="flexform.button_reset">
+				<source>Start over button</source>
+				<target>Schaltfläche 'Neu starten'</target>
+			</trans-unit>
+			<trans-unit id="flexform.button_change_answers" resname="flexform.button_change_answers">
+				<source>Change answers button</source>
+				<target>Schaltfläche 'Meine Antworten ändern'</target>
+			</trans-unit>
+			<trans-unit id="flexform.button_copy_link" resname="flexform.button_copy_link">
+				<source>Copy link button</source>
+				<target>Schaltfläche 'Link kopieren'</target>
+			</trans-unit>
+			<trans-unit id="flexform.button_mail_submit" resname="flexform.button_mail_submit">
+				<source>Send mail button</source>
+				<target>Schaltfläche 'Senden'</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
