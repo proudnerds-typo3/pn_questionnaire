@@ -8,7 +8,7 @@
 | **TYPO3 compatibility** | 12.4, 13.4, 14.3 |
 | **PHP** | 8.2+ |
 | **Author** | ProudNerds |
-| **Version** | 1.1.0 |
+| **Version** | 1.2.0 |
 | **License** | [GPL-2.0-or-later](https://github.com/proudnerds-typo3/pn_questionnaire/blob/main/LICENSE.txt) |
 
 ---

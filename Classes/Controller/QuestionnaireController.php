@@ -146,9 +146,19 @@ class QuestionnaireController extends ActionController
         $prevQuestionUid = $this->progressService->getPreviousQuestionUid($visibleQuestions, $currentUid);
         $currentAnswer   = $this->sessionService->getAnswer($feUser, $questionnaireUid, $currentUid);
 
-        $progressPercentage = $progress['total'] > 0
-            ? (int)round($progress['current'] / $progress['total'] * 100)
-            : 0;
+        // Share of the questionnaire behind the visitor, in one of two conventions the site
+        // picks through `progress_mode`. Under `completed` the question on screen does not
+        // count yet, so step 1 of 5 is 0% and only the result page reaches 100%. Under
+        // `position` it does, so the bar follows the step number and is already full on the
+        // closing question.
+        $progressPercentage = 0;
+        if ($progress['total'] > 0) {
+            $stepsBehind = ($this->settings['progress_mode'] ?? '') === 'position'
+                ? $progress['current']
+                : $progress['current'] - 1;
+
+            $progressPercentage = (int)round($stepsBehind / $progress['total'] * 100);
+        }
 
         // Decides between "Next" and "Finish" on the submit button. Provisional by
         // nature: answering this question can reveal a conditional one, after which

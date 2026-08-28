@@ -45,6 +45,10 @@
 				<source>The number of steps may change based on your answers.</source>
 				<target>Die Anzahl der Schritte kann sich je nach Ihren Antworten ändern.</target>
 			</trans-unit>
+			<trans-unit id="progress.completed" resname="progress.completed">
+				<source>Completed</source>
+				<target>Fertig</target>
+			</trans-unit>
 
 			<!-- Validation -->
 			<trans-unit id="error.required" resname="error.required">

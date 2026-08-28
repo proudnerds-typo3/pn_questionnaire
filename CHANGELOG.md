@@ -4,6 +4,22 @@ All notable changes to this extension are documented in this file. The format fo
 
 ## [Unreleased]
 
+## [1.2.0] - 2026-08-28
+
+### Added
+
+- TypoScript setting `progress_mode` to pick what the progress bar measures: `completed` (the default) counts the questions already answered, `position` follows the step number the way many questionnaires do. A site-wide setting rather than a FlexForm field, because having one questionnaire count differently from the next on the same site only confuses visitors
+
+### Changed
+
+- The progress bar now shows how much of the questionnaire is behind the visitor instead of which step they are on. The question being answered no longer counts, so the first question sits at 0% and the closing question at 80%; the bar no longer claims to be finished while there are still answers to give
+- The bar also appears on the result page, at 100% and labelled "Completed" — the one place where the run really is over
+- `aria-valuemin` and `aria-valuemax` are the percentage scale now, so a screen reader announces the same figure the bar shows. They used to be the step numbers, which made a screen reader say 0% while the bar showed 20%
+
+### Fixed
+
+- The install instructions described a Composer path repository inside a monorepo, which is not how anyone installs this extension. They now cover `composer require` and the Extension Manager in classic mode
+
 ## [1.1.0] - 2026-08-28
 
 ### Added
@@ -39,6 +55,7 @@ First public release.
 - TYPO3 12.4, 13.4 and 14.3 from a single codebase, each version verified with a full run-through
 - PHP 8.2 and up
 
-[Unreleased]: https://github.com/proudnerds-typo3/pn_questionnaire/compare/1.1.0...HEAD
+[Unreleased]: https://github.com/proudnerds-typo3/pn_questionnaire/compare/1.2.0...HEAD
+[1.2.0]: https://github.com/proudnerds-typo3/pn_questionnaire/compare/1.1.0...1.2.0
 [1.1.0]: https://github.com/proudnerds-typo3/pn_questionnaire/compare/1.0.0...1.1.0
 [1.0.0]: https://github.com/proudnerds-typo3/pn_questionnaire/releases/tag/1.0.0

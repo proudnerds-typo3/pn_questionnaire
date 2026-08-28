@@ -1,0 +1,34 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:comment><!--
+    Progress indicator, shared by the question steps and the result page.
+
+    The bar shows the share of the questionnaire already behind the visitor, so the
+    question being answered does not count yet. Only the result page reaches 100%.
+
+    Arguments:
+      percentage  share behind the visitor, 0-100
+      labelText   visible label, e.g. "Step 2 of 5" or "Completed"
+      labelId     id the progressbar borrows as its accessible name
+      showNote    whether to show the note about the number of steps varying
+--></f:comment>
+<div class="pn-questionnaire__progress" role="status" aria-label="{labelText}">
+    <span class="pn-questionnaire__progress-text" id="{labelId}">{labelText}</span>
+    <f:comment><!-- valuemin/valuemax are the percentage scale, so what the bar shows and what a screen reader announces stay the same number --></f:comment>
+    <div class="pn-questionnaire__progress-bar"
+         role="progressbar"
+         aria-labelledby="{labelId}"
+         aria-valuenow="{percentage}"
+         aria-valuemin="0"
+         aria-valuemax="100">
+        <div class="pn-questionnaire__progress-fill"
+             style="width: {percentage}%"></div>
+    </div>
+    <f:if condition="{showNote}">
+        <p class="pn-questionnaire__progress-note">
+            <f:translate key="progress.note" extensionName="PnQuestionnaire" />
+        </p>
+    </f:if>
+</div>
+</html>

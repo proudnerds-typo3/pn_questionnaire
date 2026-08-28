@@ -16,6 +16,6 @@
                typo3-core-preferred="stable"
                interlink-shortcode="proudnerds/pn-questionnaire"
     />
-    <project title="Questionnaire / Test / Decision tree" release="1.1.0" version="1.1"
+    <project title="Questionnaire / Test / Decision tree" release="1.2.0" version="1.2"
              copyright="since 2026 by Proud Nerds"/>
 </guides>

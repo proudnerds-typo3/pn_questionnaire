@@ -36,6 +36,9 @@
 			<trans-unit id="progress.note" resname="progress.note">
 				<source>The number of steps may change based on your answers.</source>
 			</trans-unit>
+			<trans-unit id="progress.completed" resname="progress.completed">
+				<source>Completed</source>
+			</trans-unit>
 
 			<!-- Validation -->
 			<trans-unit id="error.required" resname="error.required">

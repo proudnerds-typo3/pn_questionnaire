@@ -7,6 +7,10 @@
         <f:then>
             <div class="pn-questionnaire__result">
 
+                <f:comment><!-- The run is over, so the bar is full here and nowhere else --></f:comment>
+                <f:variable name="progressLabel"><f:translate key="progress.completed" extensionName="PnQuestionnaire" /></f:variable>
+                <f:render partial="Progress" arguments="{percentage: 100, labelText: progressLabel, labelId: 'progress-text-result', showNote: 0}" />
+
                 <f:comment><!-- Flash messages (outcome of mailing the result) --></f:comment>
                 <f:flashMessages />
 

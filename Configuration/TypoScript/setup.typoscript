@@ -26,6 +26,14 @@ plugin.tx_pnquestionnaire_questionnaire {
     # Show introduction screen before Q1 (can be overridden per plugin instance via FlexForm)
     introduction_screen = 1
 
+    # What the progress bar measures.
+    #   completed = questions already answered, so the first question is 0% and only the
+    #               result page reaches 100%
+    #   position  = the step number, so "step 1 of 5" fills the bar to 20% and the closing
+    #               question fills it completely
+    # The step counter above the bar reads "step X of Y" in both cases.
+    progress_mode = completed
+
     # Page uid of the folder the saved results are written to. Empty means the plugin's own page
     # is used, with a warning in the log; the FlexForm field is the intended place to set this.
     db_save_result_storage_pid =

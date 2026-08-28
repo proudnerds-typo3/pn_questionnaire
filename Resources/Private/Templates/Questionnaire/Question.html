@@ -6,29 +6,11 @@
     <div class="pn-questionnaire__step" data-active-step="{progress.current}">
 
         <f:comment><!-- Progress indicator --></f:comment>
-        <div class="pn-questionnaire__progress"
-             role="status"
-             aria-label="{f:translate(key: 'progress.step', extensionName: 'PnQuestionnaire')} {progress.current} {f:translate(key: 'progress.of', extensionName: 'PnQuestionnaire')} {progress.total}">
-            <f:comment><!-- The id lets the progressbar borrow this text as its accessible name, so there is no second copy of it to keep in sync --></f:comment>
-            <span class="pn-questionnaire__progress-text" id="progress-text-{question.uid}">
-                <f:translate key="progress.step" extensionName="PnQuestionnaire" />
-                {progress.current}
-                <f:translate key="progress.of" extensionName="PnQuestionnaire" />
-                {progress.total}
-            </span>
-            <div class="pn-questionnaire__progress-bar"
-                 role="progressbar"
-                 aria-labelledby="progress-text-{question.uid}"
-                 aria-valuenow="{progress.current}"
-                 aria-valuemin="1"
-                 aria-valuemax="{progress.total}">
-                <div class="pn-questionnaire__progress-fill"
-                     style="width: {progressPercentage}%"></div>
-            </div>
-            <p class="pn-questionnaire__progress-note">
-                <f:translate key="progress.note" extensionName="PnQuestionnaire" />
-            </p>
-        </div>
+        <f:variable name="progressLabel"><f:translate key="progress.step" extensionName="PnQuestionnaire" /> {progress.current} <f:translate key="progress.of" extensionName="PnQuestionnaire" /> {progress.total}</f:variable>
+        <f:render
+            partial="Progress"
+            arguments="{percentage: progressPercentage, labelText: progressLabel, labelId: 'progress-text-{question.uid}', showNote: 1}"
+        />
 
         <f:comment><!-- Flash messages (server-side validation errors) --></f:comment>
         <f:flashMessages />

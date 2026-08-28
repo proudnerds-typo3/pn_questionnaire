@@ -24,6 +24,9 @@
     background-color: currentColor; /* inherits the site's primary text/brand colour */
     border-radius: 4px;
     transition: width 0.3s ease;
+    /* On the first question the width is 0%: keep a sliver visible so the bar reads as
+       empty rather than as broken or not yet rendered. */
+    min-width: 4px;
 }
 
 .pn-questionnaire__progress-note,

@@ -24,22 +24,24 @@ This guide covers installation, TypoScript configuration, theming, and extending
 
 ## 1. Installation
 
-The extension is loaded via Composer as a path repository. It is already registered in the root `composer.json`:
+### Composer
 
-```json
-{
-  "repositories": [
-    { "type": "path", "url": "packages/*" }
-  ],
-  "require": {
-    "proudnerds/pn-questionnaire": "^1.0"
-  }
-}
+```bash
+composer require proudnerds/pn-questionnaire
 ```
 
-Run `composer install` after adding it. TYPO3 discovers the extension automatically via the PSR-4 autoloader entry in `packages/pn_questionnaire/composer.json`.
+TYPO3 picks the extension up automatically; there is nothing to activate by hand.
 
-After the first install, run the **Database Analyser** in the TYPO3 Install Tool to create all seven tables.
+### Classic mode
+
+Install **Questionnaire / Test / Decision tree** from the TYPO3 Extension Repository through
+**Admin Tools → Extensions**, then activate it there.
+
+### Both routes
+
+After the first install, run the **Database Analyser** in the TYPO3 Install Tool to create the
+seven tables, and load the TypoScript as described in the next section. The same applies after an
+update that adds a field — the changelog says so per release.
 
 ---
 
@@ -128,6 +130,35 @@ plugin.tx_pnquestionnaire_questionnaire.settings {
   introduction_screen = 1
 }
 ```
+
+### What the progress bar measures
+
+Two conventions are in common use for a questionnaire, and the site picks one:
+
+```typoscript
+plugin.tx_pnquestionnaire_questionnaire.settings {
+  progress_mode = completed
+}
+```
+
+| Value | Question 1 of 5 | Question 5 of 5 | Result page |
+|---|---|---|---|
+| `completed` (default) | 0% | 80% | 100% |
+| `position` | 20% | 100% | 100% |
+
+`completed` counts the questions already answered, so the bar never claims to be finished while
+there are still answers to give, and the result page is what completes it. `position` follows the
+step number, the convention many questionnaires use, at the cost of a bar that is already full
+on the closing question.
+
+The counter above the bar reads "step X of Y" either way — that number is the visitor's position
+and does not change with this setting. Under `completed` it therefore says "step 1 of 5" next to
+an empty bar, which is intentional: the step is the one being answered, the bar is what lies
+behind it.
+
+This is a TypoScript setting rather than a FlexForm field on purpose. It is a design decision for
+the whole site; having one questionnaire count differently from the next on the same site would
+only confuse visitors.
 
 ---
 
@@ -295,7 +326,7 @@ Available ViewHelpers:
 | `questionnaire` | `Questionnaire` | The questionnaire record |
 | `question` | `Question` | The current question |
 | `progress` | `array{current: int, total: int}` | Step X of Y |
-| `progressPercentage` | `int` | 0–100, for the progress bar fill width |
+| `progressPercentage` | `int` | 0–100: the share of the questionnaire behind the visitor. The question on screen is not counted yet, so the first question is 0% and the closing question is 80%. Only the result page renders 100% |
 | `prevQuestionUid` | `int\|null` | UID of the previous question, or `null` if first |
 | `currentAnswer` | `string[]` | Previously stored answer values for this question |
 | `hasAnswers` | `bool` | `true` when at least one answer is stored in the session — used to conditionally show the Reset button |
@@ -394,10 +425,10 @@ The extension ships a minimal CSS file (`Resources/Public/Css/Questionnaire.css`
 | `.pn-questionnaire__intro-actions` | Start button wrapper |
 | `.pn-questionnaire__intro-footer` | Text below the start button |
 | `.pn-questionnaire__step` | Question step container (has `data-active-step` attribute) |
-| `.pn-questionnaire__progress` | Progress indicator wrapper |
+| `.pn-questionnaire__progress` | Progress indicator wrapper (rendered by the `Progress` partial, shared by the question steps and the result page) |
 | `.pn-questionnaire__progress-bar` | Grey track of the progress bar |
 | `.pn-questionnaire__progress-fill` | Coloured fill (width set inline via `progressPercentage`) |
-| `.pn-questionnaire__progress-text` | "Step X of Y" text |
+| `.pn-questionnaire__progress-text` | "Step X of Y" on a question, "Completed" on the result page |
 | `.pn-questionnaire__progress-note` | Dynamic steps note below the bar |
 | `.pn-questionnaire__context-content` | Embedded `tt_content` element |
 | `.pn-questionnaire__question-text` | Question text area |
