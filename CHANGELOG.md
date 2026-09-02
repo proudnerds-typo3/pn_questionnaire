@@ -4,6 +4,21 @@ All notable changes to this extension are documented in this file. The format fo
 
 ## [Unreleased]
 
+## [1.2.2] - 2026-09-02
+
+Documentation only — no code changes.
+
+### Changed
+
+- The manual is now reStructuredText instead of Markdown, split over eleven pages with an explicit table of contents: introduction, examples, installation, configuration, building a questionnaire, stored results, templates, architecture, changelog and credits. The version number comes from the rendering configuration, so it can no longer go stale in the text, and every setting has an anchor of its own that can be linked to from anywhere in the manual
+
+### Added
+
+- **Screenshots**: two of the frontend — a question step and a result page with the retrieval link and the mail form — and three of the backend, showing the question types, a result page and an advice block with its conditions
+- **Credits**: the authors, the sponsorship by Gemeente Almere, the origin and licence of the icons, where to get support, and the licence of the manual itself
+- A reference entry for every TypoScript and plugin setting, 35 in total, each naming the label it carries in the backend. `db_save_result_storage_pid` was missing from the manual altogether
+- A quick start, an upgrading section, and a note about taking a questionnaire offline or scheduling it with the standard TYPO3 publish dates
+
 ## [1.2.1] - 2026-09-02
 
 ### Changed
@@ -65,7 +80,8 @@ First public release.
 - TYPO3 12.4, 13.4 and 14.3 from a single codebase, each version verified with a full run-through
 - PHP 8.2 and up
 
-[Unreleased]: https://github.com/proudnerds-typo3/pn_questionnaire/compare/1.2.1...HEAD
+[Unreleased]: https://github.com/proudnerds-typo3/pn_questionnaire/compare/1.2.2...HEAD
+[1.2.2]: https://github.com/proudnerds-typo3/pn_questionnaire/compare/1.2.1...1.2.2
 [1.2.1]: https://github.com/proudnerds-typo3/pn_questionnaire/compare/1.2.0...1.2.1
 [1.2.0]: https://github.com/proudnerds-typo3/pn_questionnaire/compare/1.1.0...1.2.0
 [1.1.0]: https://github.com/proudnerds-typo3/pn_questionnaire/compare/1.0.0...1.1.0

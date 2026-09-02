@@ -24,9 +24,11 @@ Then run the **Database Analyser** in the Install Tool to create the tables, and
 
 | Document | Audience |
 |---|---|
-| [Overview](Documentation/Index.md) | Start here — what the extension does and a quick start |
-| [Editor Guide](Documentation/Editor.md) | Content editors — building and managing questionnaires in the backend |
-| [Admin Guide](Documentation/Admin.md) | Administrators, integrators and developers — install, configure, theme and extend |
+| [Overview](Documentation/Index.rst) | Start here — what the extension does and a quick start |
+| [Building a questionnaire](Documentation/Editing.rst) | Content editors — building and managing questionnaires in the backend |
+| [Installation](Documentation/Installation.rst) | Administrators — install the extension and load its TypoScript |
+| [Configuration](Documentation/Configuration.rst) | Integrators — every TypoScript and plugin setting, with defaults |
+| [Templates](Documentation/Templates.rst) | Frontend developers — templates, BEM classes, JavaScript and translations |
 
 ## Credits
 
