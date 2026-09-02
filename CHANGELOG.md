@@ -4,6 +4,16 @@ All notable changes to this extension are documented in this file. The format fo
 
 ## [Unreleased]
 
+## [1.2.1] - 2026-09-02
+
+### Changed
+
+- The extension opts out of the automatic TER import from Packagist (`extra.typo3/cms.skip-ter-packagist-import`). The TER mirrors every Packagist package that declares an extension key, and such an imported listing occupies the key: it cannot be claimed while it exists. The key `pn_questionnaire` is now registered to Proud Nerds, which blocks the import by itself, and this flag keeps it blocked should that registration ever go away. Nothing changes for Composer installations
+
+### Fixed
+
+- Documentation: notes and warnings are now GitHub-style admonitions, so they render as highlighted boxes on docs.typo3.org instead of plain quotes; plain-text diagrams no longer get PHP syntax highlighting; and `guides.xml` no longer opens with an XML declaration, which the TYPO3 documentation team advises against
+
 ## [1.2.0] - 2026-08-28
 
 ### Added
@@ -55,7 +65,8 @@ First public release.
 - TYPO3 12.4, 13.4 and 14.3 from a single codebase, each version verified with a full run-through
 - PHP 8.2 and up
 
-[Unreleased]: https://github.com/proudnerds-typo3/pn_questionnaire/compare/1.2.0...HEAD
+[Unreleased]: https://github.com/proudnerds-typo3/pn_questionnaire/compare/1.2.1...HEAD
+[1.2.1]: https://github.com/proudnerds-typo3/pn_questionnaire/compare/1.2.0...1.2.1
 [1.2.0]: https://github.com/proudnerds-typo3/pn_questionnaire/compare/1.1.0...1.2.0
 [1.1.0]: https://github.com/proudnerds-typo3/pn_questionnaire/compare/1.0.0...1.1.0
 [1.0.0]: https://github.com/proudnerds-typo3/pn_questionnaire/releases/tag/1.0.0

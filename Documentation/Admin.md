@@ -76,6 +76,7 @@ label: Questionnaire / Test / Decision tree
 
 TYPO3 automatically includes `setup.typoscript` and `constants.typoscript` from the set directory when the dependency is active.
 
+> [!TIP]
 > **Troubleshooting — TypoScript from the set is not loaded**
 >
 > If the set is listed in `dependencies` but the TypoScript is still not applied, check the **root TypoScript template** in the TYPO3 backend:
@@ -164,7 +165,8 @@ only confuse visitors.
 
 ## 4. Configuring domain record outcomes
 
-> **Note:** "Domain record" here refers to a **domain model record** in the Extbase/DDD sense (e.g. a news article, an activity, an ad) — not a domain name or HTTP address.
+> [!NOTE]
+> "Domain record" here refers to a **domain model record** in the Extbase/DDD sense (e.g. a news article, an activity, an ad) — not a domain name or HTTP address.
 
 The **Domain record** outcome type redirects the visitor to the detail view of a record from another extension. One target can be configured per site via TypoScript and a TCA override.
 
@@ -282,7 +284,7 @@ The extension uses standard TYPO3 Fluid template path merging. Copy any file fro
 
 ### Default paths (from extension)
 
-```
+```text
 Resources/Private/
 ├── Layouts/
 │   └── Default.html
@@ -543,7 +545,7 @@ The existing Dutch translation (`nl.locallang.xlf`) can be used as a reference.
 
 ## 9. Architecture overview
 
-```
+```text
 QuestionnaireController
     │
     ├── QuestionnaireRepository   → loads the configured questionnaire
@@ -558,7 +560,7 @@ QuestionnaireController
 
 ### Action flow
 
-```
+```text
 GET  /page  →  introAction()      render intro screen
 GET  /page  →  questionAction()   render current question
 POST /page  →  processAction()    store answer, redirect to next or result
@@ -589,7 +591,7 @@ Each condition has a `condition_type` that determines how it is evaluated:
 
 **`specific_answer`** (default) — passes when the visitor selected a specific answer option for the reference question:
 
-```
+```text
 result = evaluate(condition_1)
 for each condition_2, condition_3, ...:
     if operator == AND → result = result && evaluate(condition)
@@ -598,7 +600,7 @@ for each condition_2, condition_3, ...:
 
 **`scale_range`** — passes when the visitor's numeric answer for the reference question satisfies the configured operator and threshold:
 
-```
+```text
 stored_value [operator] scale_value
 e.g. 7 >= 5  → true
 ```
@@ -611,7 +613,7 @@ A question is shown when the final combined `result` is `true`.
 
 ### Result page selection
 
-```
+```text
 foreach resultPage in questionnaire.resultPages (ordered by sort_order):
     if matches(resultPage, sessionAnswers, totalScore):
         return resultPage  ← first match wins
@@ -634,7 +636,7 @@ Trigger type matching:
 
 Answers are stored in the TYPO3 frontend session under the root key `tx_pnquestionnaire`.
 
-```
+```text
 tx_pnquestionnaire
 └── q_{questionnaireUid}
     └── answers

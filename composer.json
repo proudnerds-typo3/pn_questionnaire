@@ -39,7 +39,8 @@
 	],
 	"extra": {
 		"typo3/cms": {
-			"extension-key": "pn_questionnaire"
+			"extension-key": "pn_questionnaire",
+			"skip-ter-packagist-import": true
 		}
 	},
 	"autoload": {

@@ -61,6 +61,7 @@ Before building a questionnaire it helps to understand the main building blocks.
 4. Adjust the remaining FlexForm settings if needed — see [§9](#9-plugin-settings-flexform)
 5. Save
 
+> [!NOTE]
 > **One questionnaire, multiple pages**
 > The same questionnaire record can be placed on multiple pages. Each placement can have different display settings (show score, show answer summary, etc.) because those settings are stored on the plugin instance, not the questionnaire record itself.
 
@@ -82,6 +83,7 @@ Inside the Questionnaire record, open the **Questions** tab and click **Create n
 
 Questions are shown in the order they appear in the list. Drag and drop to reorder.
 
+> [!NOTE]
 > **Informational questions**
 > Use the **Informational** type to insert a screen with text or media but no user input — for example, an intermediate explanation or a section break. The visitor just clicks Next to continue.
 
@@ -150,7 +152,7 @@ Conditions are evaluated in the order they appear in the list (top to bottom, by
 
 ### Example
 
-```
+```text
 Q1: What is your situation?
     → "Employed"           → show Q2a (work questions)
     → "Self-employed"      → show Q2b (entrepreneur questions)
@@ -201,6 +203,7 @@ Only available when **Outcome type** is set to **Inline**.
 
 Advice blocks are shown in the order they appear in the list. Only blocks whose condition is met are rendered.
 
+> [!NOTE]
 > **Use case example**
 > Result page for all visitors with score 10–20. Within it:
 > — Advice block A (always shown): general recommendation
@@ -214,7 +217,8 @@ Advice blocks are shown in the order they appear in the list. Only blocks whose 
 
 This is useful for advice that only applies to people who skipped something. Take a question about organ donation with one option "I have already registered my choice". Attach a block to that option, tick **Invert condition**, and everyone who did *not* register gets the reminder — while the people who did are spared a message that does not apply to them.
 
-> **Watch out: an unanswered question counts as "not given".**
+> [!WARNING]
+> **An unanswered question counts as "not given".**
 > If the question is optional, or the visitor never reached it, the answer is absent — so an inverted block will appear. Whether that is what you want depends on the text. A reminder ("don't forget to arrange this") is fine for someone who skipped the question. A statement that assumes a situation ("since you have not arranged this yet") is not. Make the question **required** if you need the distinction to be reliable.
 
 ### Grouping blocks under a heading
@@ -305,6 +309,7 @@ The address is used to send that one mail and is **not stored** — not in the d
 
 The mail uses the layout of your TYPO3 installation and is sent as both HTML and plain text. **Opening text of the mail** and **Closing text** let you replace the standard lines; leave them empty to keep the defaults.
 
+> [!CAUTION]
 > **Leave "Switch off the send limit" off on a live site.**
 > The limit is what stops the form from being used to send mail to other people's addresses in bulk. Switching it off is meant for testing an installation, where repeated attempts would otherwise be blocked.
 
@@ -329,6 +334,7 @@ Scale questions have a **Scale display** field that controls how the input is re
 | **Range slider** (default) | A draggable `<input type="range">` showing the selected value live. Defaults to the midpoint of the range when no previous answer is stored. |
 | **Radio buttons** | Individual numbered radio inputs, one per step in the range |
 
+> [!NOTE]
 > Scale and informational questions are score-neutral — they never add to the total score.
 
 ---
@@ -351,6 +357,7 @@ When **Scale answer range** is selected, three extra fields appear:
 | **Minimum value** | Lower bound (inclusive) |
 | **Maximum value** | Upper bound (inclusive) |
 
+> [!IMPORTANT]
 > **Order matters.** Result pages are evaluated top to bottom. The first match wins. Place the most specific triggers first and catch-all last.
 
 ---
@@ -364,7 +371,8 @@ When **Scale answer range** is selected, three extra fields appear:
 | **External URL** | Visitor is redirected to an external URL you enter                                                                                                                                                   |
 | **Domain record** | Visitor is sent to the detail view of a specific record from another extension (e.g. news article, event, vacancy, ad or activity). Requires developer configuration in TypoScript and overrides TCA |
 
-> **Tip — redirects and visitor expectations**
+> [!TIP]
+> **Redirects and visitor expectations**
 > When the outcome is **Internal page**, **External URL** or **Domain record**, the visitor is silently redirected away from the questionnaire page the moment they submit their last answer. They may not understand why they suddenly land on a different page.
 >
 > Consider adding an **Informational** question as the very last step before the result. Use it to tell the visitor what will happen next — for example:
@@ -383,6 +391,7 @@ When **Scale answer range** is selected, three extra fields appear:
 | **CTA link** | Call-to-action button target URL (optional) |
 | **Advice blocks** | Conditional content sections — see [§8](#8-step-7--add-advice-blocks) |
 
+> [!TIP]
 > **Multiple links in a result?**
 > The result page supports one CTA button. If you need multiple links, add them as hyperlinks inside the Body text field.
 
