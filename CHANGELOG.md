@@ -4,9 +4,11 @@ All notable changes to this extension are documented in this file. The format fo
 
 ## [Unreleased]
 
-## [1.2.2] - 2026-09-02
+## [1.2.3] - 2026-09-02
 
-Documentation only — no code changes.
+### Fixed
+
+- `ext_emconf.php` uses `$EM_CONF[$_EXTKEY]` and no longer declares `strict_types`, both required by the TER. Nothing changes for an installation
 
 ### Changed
 
@@ -80,8 +82,8 @@ First public release.
 - TYPO3 12.4, 13.4 and 14.3 from a single codebase, each version verified with a full run-through
 - PHP 8.2 and up
 
-[Unreleased]: https://github.com/proudnerds-typo3/pn_questionnaire/compare/1.2.2...HEAD
-[1.2.2]: https://github.com/proudnerds-typo3/pn_questionnaire/compare/1.2.1...1.2.2
+[Unreleased]: https://github.com/proudnerds-typo3/pn_questionnaire/compare/1.2.3...HEAD
+[1.2.3]: https://github.com/proudnerds-typo3/pn_questionnaire/compare/1.2.1...1.2.3
 [1.2.1]: https://github.com/proudnerds-typo3/pn_questionnaire/compare/1.2.0...1.2.1
 [1.2.0]: https://github.com/proudnerds-typo3/pn_questionnaire/compare/1.1.0...1.2.0
 [1.1.0]: https://github.com/proudnerds-typo3/pn_questionnaire/compare/1.0.0...1.1.0
