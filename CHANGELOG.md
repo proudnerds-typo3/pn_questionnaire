@@ -6,7 +6,9 @@ All notable changes to this extension are documented in this file. The format fo
 
 ## [1.2.2] - 2026-09-02
 
-Documentation only — no code changes.
+### Fixed
+
+- `ext_emconf.php` uses `$EM_CONF[$_EXTKEY]` and no longer declares `strict_types`, both required by the TER. Nothing changes for an installation
 
 ### Changed
 

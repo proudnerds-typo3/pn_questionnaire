@@ -1,8 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
-$EM_CONF['pn_questionnaire'] = [
+$EM_CONF[$_EXTKEY] = [
     'title' => 'Questionnaire / Test / Decision tree',
     'description' => 'Build multi-step questionnaires, self-assessments, tests and decision trees from backend records, with conditional advice per answer and an anonymously stored result the visitor can retrieve or mail to themselves.',
     'category' => 'plugin',
